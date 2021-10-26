@@ -1,7 +1,7 @@
 ---
 headless: true
 ---
-
+- [Equipo de trbajo]({{< relref "/docs/shortcodes/equipo" >}})
 - **Shortcodes**
 - [p5]({{< relref "/docs/shortcodes/p5" >}})
 - [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
@@ -11,4 +11,5 @@ headless: true
 - [Katex]({{< relref "/docs/shortcodes/katex" >}})
 - [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
 - [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
+
 <br />
