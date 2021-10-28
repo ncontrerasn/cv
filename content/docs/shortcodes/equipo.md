@@ -5,7 +5,7 @@
 Estudainte de novena matrícula, con un fugaz acercamiento a la materia mediante Unity.
 
 ### Pasatiempos
-Ir al gimnasio y llorar :v
+Ir al gimnasio y escuchar música.
 
 ### Experiencias con los leguajes usados en la materia
 
