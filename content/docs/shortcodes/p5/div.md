@@ -188,7 +188,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
   p5.setup = function() {
     p5.createCanvas(710, 400);
     // specify multiple formats for different browsers
-    fingers = p5.createVideo(['/vc/sketches/fingers.mov', '/vc/sketches/fingers.webm']);
+    fingers = p5.createVideo(['/cv/sketches/fingers.mov', '/cv/sketches/fingers.webm']);
     fingers.hide(); // by default video shows up in separate dom
                     // element. hide it and draw it to the canvas instead    
   };
