@@ -17,4 +17,3 @@ Esta ilusion se basa en la impresion del movimiento aparente en espacios perifer
   <img src="../peripheralDriftIlussion.jpg">
 </p>
 
-[//]: # (//![Ilusion de Movimiento Periferico](../peripheralDriftIlussion.jpg))
