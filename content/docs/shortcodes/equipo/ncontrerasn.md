@@ -26,8 +26,6 @@ El Triángulo de Kanizsa es una ilusión óptica descrita por primera vez por el
   <img src="../triangle.JPG">
 </p>
 
-[//]: # (//![Triángulo de Kanizsa](../triangle.JPG))
-
 ### **Contornos ilusorios**
 
 O contornos subjetivos son ilusiones ópticas que evocan la percepción de una era sin luminancia o cambio de color dentro del borde. El brillo ilusorio y su profundidad ordenados son frecuentemente acompañados de contornos ilusorios. Friedrich Schumann es a menudo acreditado con el descubrimiento de los contornos ilusorios alrededor de los principios del siglo veinte, sin embargo los contornos ilusorios son presentados en un arte de citar a las Edades Medias. La hoja Científica Americana de Gaetano Kanizsa escrita en 1976 marca el resurgimiento de interés en los contornos ilusorios por científicos de visión.
