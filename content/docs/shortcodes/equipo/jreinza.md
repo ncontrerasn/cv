@@ -8,3 +8,13 @@ Tocar la guitarra, videojuegos retro, resolver problemas de programacion y el fu
 ### Experiencias con los lenguajes usados en la materia
 
 Conocimiento en el lenguaje Java uso de librerias como javaFX y swing,y muy poco de Javascript.
+
+## **Ilusión de Movimiento Periferico**
+
+Esta ilusion se basa en la impresion del movimiento aparente en espacios perifericos de vista, esta apoyada en el uso de colores claros y oscuros.
+
+<p align="center">
+  <img src="../peripheralDriftIlussion.JPG">
+</p>
+
+[//]: # (//![Ilusion de Movimiento Periferico](../peripheralDriftIlussion.JPG))
