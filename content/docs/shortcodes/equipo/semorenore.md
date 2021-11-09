@@ -13,7 +13,7 @@ Estudiante de decima matrícula, sin experiencia en la parte de computación vis
 
 ### **Intereses**
 
-- Dessarrollo softwarre web
+- Dessarrollo software web
 - Desarrollo software movil
 
 ## **Ilusión de Zöllner**
