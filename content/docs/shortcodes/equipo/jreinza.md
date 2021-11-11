@@ -24,19 +24,18 @@ Esta ilusion se basa en la impresion del movimiento aparente en espacios perifer
 {{< details title="p5-global-iframe markdown" open=false >}}
 ```js
 {{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="680" height="420" >}}
-
 let d = 3;
 function setup() {
-  createCanvas(680, 420);
+  createCanvas(400, 320);
   colorMode(RGB,1);
 }
 
 function draw() {
   background(0,220,0);
   let theta = 0.0;
-  for(let i = 30; i < 680; i += 40){
-    for(let j = 30; j < 420; j += 40){
-      drawCircles(i,j,color(0,0,1),30,theta);
+  for(let i = 20; i < 400; i += 30){
+    for(let j = 20; j < 320; j += 30){
+      drawCircles(i,j,color(0,0,1),20,theta);
       theta += 0.55;
     }
   }
@@ -71,19 +70,18 @@ Note that `p5` should be the name to be used for the sketch object variable.
 <div align = "center">
 
 {{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="680" height="420" >}}
-
 let d = 3;
 function setup() {
-  createCanvas(680, 420);
+  createCanvas(400, 320);
   colorMode(RGB,1);
 }
 
 function draw() {
   background(0,220,0);
   let theta = 0.0;
-  for(let i = 30; i < 680; i += 40){
-    for(let j = 30; j < 420; j += 40){
-      drawCircles(i,j,color(0,0,1),30,theta);
+  for(let i = 20; i < 400; i += 30){
+    for(let j = 20; j < 320; j += 30){
+      drawCircles(i,j,color(0,0,1),20,theta);
       theta += 0.55;
     }
   }
