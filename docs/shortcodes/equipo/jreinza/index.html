@@ -14,13 +14,13 @@ Experiencias con los lenguajes usados en la materia #  Conocimiento en el lengua
 Ilusión de Movimiento Periferico #  Esta ilusion se basa en la impresion del movimiento aparente en espacios perifericos de vista, esta apoyada en el uso de colores claros y oscuros.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/shortcodes/equipo/jreinza/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-11-10T20:58:01-05:00">
+<meta property="article:modified_time" content="2021-11-10T21:03:32-05:00">
 <title>Jreinza | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.0f2c41bf0724d4a6943ee8c5bc6e14d7209c77dae473dd71984dd3c0a056dc25.js integrity="sha256-DyxBvwck1KaUPujFvG4U1yCcd9rkc91xmE3TwKBW3CU=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.94d99386001f164cb41055d818d3b98c75e4394788e04a9ce5ee82c4162f5f1a.js integrity="sha256-lNmThgAfFky0EFXYGNO5jHXkOUeI4Eqc5e6CxBYvXxo=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -175,19 +175,18 @@ Experiencias con los lenguajes usados en la materia
 <details><summary>p5-global-iframe markdown</summary>
 <div class=markdown-inner>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>{{<span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>p5</span><span style=color:#f92672>-</span><span style=color:#a6e22e>global</span><span style=color:#f92672>-</span><span style=color:#a6e22e>iframe</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Dynamic Kanizsa Illusion&#34;</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;680&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;420&#34;</span> <span style=color:#f92672>&gt;</span>}}
-
 <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>d</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>3</span>;
 <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
-  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>680</span>, <span style=color:#ae81ff>420</span>);
+  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>400</span>, <span style=color:#ae81ff>320</span>);
   <span style=color:#a6e22e>colorMode</span>(<span style=color:#a6e22e>RGB</span>,<span style=color:#ae81ff>1</span>);
 }
 
 <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
   <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>220</span>,<span style=color:#ae81ff>0</span>);
   <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>theta</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
-  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>680</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>40</span>){
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>420</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>40</span>){
-      <span style=color:#a6e22e>drawCircles</span>(<span style=color:#a6e22e>i</span>,<span style=color:#a6e22e>j</span>,<span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>1</span>),<span style=color:#ae81ff>30</span>,<span style=color:#a6e22e>theta</span>);
+  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>400</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>30</span>){
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>20</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>320</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>30</span>){
+      <span style=color:#a6e22e>drawCircles</span>(<span style=color:#a6e22e>i</span>,<span style=color:#a6e22e>j</span>,<span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>1</span>),<span style=color:#ae81ff>20</span>,<span style=color:#a6e22e>theta</span>);
       <span style=color:#a6e22e>theta</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>0.55</span>;
     }
   }
@@ -231,19 +230,18 @@ Note that <code>p5</code> should be the name to be used for the sketch object va
             
             <script>
               
-
 let d = 3;
 function setup() {
-  createCanvas(680, 420);
+  createCanvas(400, 320);
   colorMode(RGB,1);
 }
 
 function draw() {
   background(0,220,0);
   let theta = 0.0;
-  for(let i = 30; i < 680; i += 40){
-    for(let j = 30; j < 420; j += 40){
-      drawCircles(i,j,color(0,0,1),30,theta);
+  for(let i = 20; i < 400; i += 30){
+    for(let j = 20; j < 320; j += 30){
+      drawCircles(i,j,color(0,0,1),20,theta);
       theta += 0.55;
     }
   }
@@ -276,7 +274,7 @@ function drawCircles(x,y,tint,diameter,theta){
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/bea9dd2bcb962eeea9e606416922660cdacad90f title="Last modified by jreinaz | November 11, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/b70c24b116620d7599b02dd362933c480b68c68c title="Last modified by jreinaz | November 11, 2021" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>November 11, 2021</span>
 </a>
