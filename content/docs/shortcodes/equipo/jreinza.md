@@ -114,3 +114,7 @@ El uso de estas ilusiones visuales de movimiento se usan en los siguientes campo
 ## **Realidad Virtual y Aumentada**
 
 Los usuarios inmersos en estas ilusiones se perciben a si mismos en movimiento mientras permanecen estaticos, lo que permite jugar con el sistema de equilibrio que esta en sus cuerpos.
+  
+<p align="center">
+  <img src="../VRAR.jpg">
+</p>
