@@ -319,7 +319,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 
 {{< /p5-global-iframe >}}
 
-
+**Nota:** Al presionar el clic izquierdo se detiene la animación para poder apreciar mejor la ilusión, la animación seguirá en movimiento una vez se deje de oprimir el botón. 
 </div>
 
 ## **Aplicaciones**
