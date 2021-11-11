@@ -23,7 +23,7 @@ Esta ilusion se basa en la impresion del movimiento aparente en espacios perifer
 
 {{< details title="p5-global-iframe markdown" open=false >}}
 ```js
-{{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="400" height="320" >}}
+{{</* p5-global-iframe id="Peripheral Drift Illusion" width="400" height="320" >}}
 let d = 3;
 function setup() {
   createCanvas(400, 320);
@@ -69,7 +69,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 
 <div align = "center">
 
-{{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="400" height="320" >}}
+{{< p5-global-iframe id="Peripheral Drift Illusion" width="400" height="320" >}}
 let d = 3;
 function setup() {
   createCanvas(400, 320);
@@ -107,6 +107,7 @@ function drawCircles(x,y,tint,diameter,theta){
 {{< /p5-global-iframe >}}
   
 </div>
+  
 ### **Aplicaciones**
 El uso de estas ilusiones visuales de movimiento se usan en los siguientes campos:
 
