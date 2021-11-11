@@ -23,7 +23,7 @@ Esta ilusion se basa en la impresion del movimiento aparente en espacios perifer
 
 {{< details title="p5-global-iframe markdown" open=false >}}
 ```js
-{{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="625" height="625" >}}
+{{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="1000" height="1000" >}}
 
   let d = 5;
 function setup() {
@@ -71,7 +71,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 
 <div align = "center">
 
-{{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="420" height="430" >}}
+{{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="1000" height="1000" >}}
 
   let d = 5;
 function setup() {
