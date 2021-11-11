@@ -1,11 +1,11 @@
-## Juan Sebastian Reina
+## **Juan Sebastian Reina**
 
 Estudiante de novena matricula, conocimiento de algunas funcionalidades de la libreria OpenCV para manipulacion de imagenes respecto a computacion visual.
 
-### Pasatiempos
+### **Pasatiempos**
 Tocar la guitarra, videojuegos retro, resolver problemas de programacion y el futbol freestyle
 
-### Experiencias con los lenguajes usados en la materia
+### **Experiencias con los lenguajes usados en la materia**
 
 Conocimiento en el lenguaje Java uso de librerias como javaFX y swing,y muy poco de Javascript.
 
@@ -23,7 +23,7 @@ Esta ilusion se basa en la impresion del movimiento aparente en espacios perifer
 
 {{< details title="p5-global-iframe markdown" open=false >}}
 ```js
-{{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="680" height="420" >}}
+{{</* p5-global-iframe id="Dynamic Kanizsa Illusion" width="400" height="320" >}}
 let d = 3;
 function setup() {
   createCanvas(400, 320);
@@ -69,7 +69,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 
 <div align = "center">
 
-{{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="680" height="420" >}}
+{{< p5-global-iframe id="Dynamic Kanizsa Illusion" width="400" height="320" >}}
 let d = 3;
 function setup() {
   createCanvas(400, 320);
@@ -105,3 +105,11 @@ function drawCircles(x,y,tint,diameter,theta){
   pop();
 }
 {{< /p5-global-iframe >}}
+  
+</div>
+### **Aplicaciones**
+El uso de estas ilusiones visuales de movimiento se usan en los siguientes campos:
+
+## **Realidad Virtual y Aumentada**
+
+Los usuarios inmersos en estas ilusiones se perciben a si mismos en movimiento mientras permanecen estaticos, lo que permite jugar con el sistema de equilibrio que esta en sus cuerpos.
