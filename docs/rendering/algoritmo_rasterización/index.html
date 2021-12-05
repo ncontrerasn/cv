@@ -1,0 +1,475 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Algoritmo del punto medio para circunferencias #  https://es.wikipedia.org/wiki/Algoritmo_del_punto_medio_para_circunferencias
+https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
+ p5-global-iframe markdown {{< p5-global-iframe id=&#34;Algoritmo del punto medio para circunferencias&#34; width=&#34;420&#34; height=&#34;405&#34; >}} var p, x, y, r, ans=false, bandera = false; function setup() { createCanvas(370, 380); background(255) slider = createSlider(20, 150, 100); slider.position(20, 20); r=slider.value(); translate(200,200) strokeWeight(2) valueDisplayer = createP() valueDisplayer.position(160, 0) button2 = createButton('Dibujar'); button2.position(25,50); button2.mousePressed(resetSketch) } function resetSketch(){ strokeWeight(0) rect(-150, -150, 501, 501); strokeWeight(2) bandera = false ans = false updateValue() loop() } function draw() { valueDisplayer.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content>
+<meta property="og:description" content="Algoritmo del punto medio para circunferencias #  https://es.wikipedia.org/wiki/Algoritmo_del_punto_medio_para_circunferencias
+https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
+ p5-global-iframe markdown {{< p5-global-iframe id=&#34;Algoritmo del punto medio para circunferencias&#34; width=&#34;420&#34; height=&#34;405&#34; >}} var p, x, y, r, ans=false, bandera = false; function setup() { createCanvas(370, 380); background(255) slider = createSlider(20, 150, 100); slider.position(20, 20); r=slider.value(); translate(200,200) strokeWeight(2) valueDisplayer = createP() valueDisplayer.position(160, 0) button2 = createButton('Dibujar'); button2.position(25,50); button2.mousePressed(resetSketch) } function resetSketch(){ strokeWeight(0) rect(-150, -150, 501, 501); strokeWeight(2) bandera = false ans = false updateValue() loop() } function draw() { valueDisplayer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/rendering/algoritmo_rasterizaci%C3%B3n/"><meta property="article:section" content="docs">
+<title>Algoritmo Rasterización | Visual Computing</title>
+<link rel=manifest href=/cv/manifest.json>
+<link rel=icon href=/cv/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
+<script defer src=/cv/flexsearch.min.js></script>
+<script defer src=/cv/en.search.min.357eb64a9f501a9c370c8eecebf1dd4389ffa929daf45dc70915038ed3252f6f.js integrity="sha256-NX62Sp9QGpw3DI7s6/HdQ4n/qSna9F3HCRUDjtMlL28=" crossorigin=anonymous></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/cv/><span>Visual Computing</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<input type=checkbox id=section-455c172e5d869d2bd71a5e8d3919cbfb class=toggle>
+<label for=section-455c172e5d869d2bd71a5e8d3919cbfb class="flex justify-between">
+<a role=button>Equipo</a>
+</label>
+<ul>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/equipo/esgonzalezca/>Esgonzalezca</a>
+</li>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/equipo/jreinza/>Jreinza</a>
+</li>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/equipo/ncontrerasn/>Ncontrerasn</a>
+</li>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/equipo/semorenore/>Semorenore</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-341a116ad5c8e4c380cc77b7fab02191 class=toggle checked>
+<label for=section-341a116ad5c8e4c380cc77b7fab02191 class="flex justify-between">
+<a role=button>Rendering</a>
+</label>
+<ul>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/rendering/algoritmo_rasterizaci%C3%B3n/ class=active>Algoritmo Rasterización</a>
+</li>
+<li>
+<a href=https://ncontrerasn.github.io/cv/docs/rendering/algoritmo_visibilidad/>Algoritmo Visibilidad</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/cv/posts/>
+Blog
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/cv/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Algoritmo Rasterización</strong>
+<label for=toc-control>
+<img src=/cv/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h2 id=algoritmo-del-punto-medio-para-circunferencias>
+<strong>Algoritmo del punto medio para circunferencias</strong>
+<a class=anchor href=#algoritmo-del-punto-medio-para-circunferencias>#</a>
+</h2>
+<p><a href=https://es.wikipedia.org/wiki/Algoritmo_del_punto_medio_para_circunferencias>https://es.wikipedia.org/wiki/Algoritmo_del_punto_medio_para_circunferencias</a></p>
+<p><a href=https://en.wikipedia.org/wiki/Midpoint_circle_algorithm>https://en.wikipedia.org/wiki/Midpoint_circle_algorithm</a></p>
+<br>
+<details><summary>p5-global-iframe markdown</summary>
+<div class=markdown-inner>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>{{<span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>p5</span><span style=color:#f92672>-</span><span style=color:#a6e22e>global</span><span style=color:#f92672>-</span><span style=color:#a6e22e>iframe</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Algoritmo del punto medio para circunferencias&#34;</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;420&#34;</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;405&#34;</span> <span style=color:#f92672>&gt;</span>}}
+
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>p</span>, <span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>r</span>, <span style=color:#a6e22e>ans</span><span style=color:#f92672>=</span><span style=color:#66d9ef>false</span>, <span style=color:#a6e22e>bandera</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>370</span>, <span style=color:#ae81ff>380</span>);
+  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>255</span>)
+
+  <span style=color:#a6e22e>slider</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createSlider</span>(<span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>150</span>, <span style=color:#ae81ff>100</span>);
+  <span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>20</span>);
+  <span style=color:#a6e22e>r</span><span style=color:#f92672>=</span><span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span>();
+
+  <span style=color:#a6e22e>translate</span>(<span style=color:#ae81ff>200</span>,<span style=color:#ae81ff>200</span>)
+  <span style=color:#a6e22e>strokeWeight</span>(<span style=color:#ae81ff>2</span>)
+
+  <span style=color:#a6e22e>valueDisplayer</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createP</span>()
+  <span style=color:#a6e22e>valueDisplayer</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>160</span>, <span style=color:#ae81ff>0</span>)
+  
+  <span style=color:#a6e22e>button2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#39;Dibujar&#39;</span>);
+  <span style=color:#a6e22e>button2</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>25</span>,<span style=color:#ae81ff>50</span>);
+  <span style=color:#a6e22e>button2</span>.<span style=color:#a6e22e>mousePressed</span>(<span style=color:#a6e22e>resetSketch</span>)
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>resetSketch</span>(){
+  <span style=color:#a6e22e>strokeWeight</span>(<span style=color:#ae81ff>0</span>)
+  <span style=color:#a6e22e>rect</span>(<span style=color:#f92672>-</span><span style=color:#ae81ff>150</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>150</span>, <span style=color:#ae81ff>501</span>, <span style=color:#ae81ff>501</span>);
+  <span style=color:#a6e22e>strokeWeight</span>(<span style=color:#ae81ff>2</span>)
+
+  <span style=color:#a6e22e>bandera</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+  <span style=color:#a6e22e>ans</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+
+  <span style=color:#a6e22e>updateValue</span>()
+  <span style=color:#a6e22e>loop</span>()
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+  <span style=color:#a6e22e>valueDisplayer</span>.<span style=color:#a6e22e>html</span>(<span style=color:#e6db74>&#39;Radio: &#39;</span><span style=color:#f92672>+</span><span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span>());
+
+  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>bandera</span>){
+    <span style=color:#a6e22e>ans</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>midPoint</span>()
+    <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>ans</span><span style=color:#f92672>==</span><span style=color:#66d9ef>true</span>){
+      <span style=color:#a6e22e>noLoop</span>()
+      <span style=color:#a6e22e>bandera</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+    }
+  }
+  <span style=color:#a6e22e>loop</span>()
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>updateValue</span>(){
+  <span style=color:#a6e22e>r</span><span style=color:#f92672>=</span><span style=color:#a6e22e>slider</span>.<span style=color:#a6e22e>value</span>();
+  <span style=color:#a6e22e>p</span><span style=color:#f92672>=</span><span style=color:#ae81ff>1</span><span style=color:#f92672>-</span><span style=color:#a6e22e>r</span>
+  <span style=color:#a6e22e>x</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>
+  <span style=color:#a6e22e>y</span><span style=color:#f92672>=</span><span style=color:#a6e22e>r</span>
+  <span style=color:#a6e22e>bandera</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>midPoint</span>(){
+  <span style=color:#a6e22e>x</span><span style=color:#f92672>+=</span><span style=color:#ae81ff>1</span>
+  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>p</span><span style=color:#f92672>&lt;</span><span style=color:#ae81ff>0</span>){
+    <span style=color:#a6e22e>drawPoints</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>)
+    <span style=color:#a6e22e>p</span><span style=color:#f92672>=</span><span style=color:#a6e22e>p</span><span style=color:#f92672>+</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#a6e22e>x</span><span style=color:#f92672>+</span><span style=color:#ae81ff>3</span>
+  }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>p</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span>){
+    <span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>
+    <span style=color:#a6e22e>drawPoints</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>)
+    <span style=color:#a6e22e>p</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>p</span><span style=color:#f92672>+</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#a6e22e>x</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#a6e22e>y</span><span style=color:#f92672>+</span><span style=color:#ae81ff>5</span>
+  }
+
+  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>x</span><span style=color:#f92672>&gt;=</span><span style=color:#a6e22e>y</span>){
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>
+  }
+  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>drawPoints</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>){
+  <span style=color:#a6e22e>translate</span>(<span style=color:#ae81ff>200</span>,<span style=color:#ae81ff>200</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#a6e22e>x</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>y</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>x</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>y</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>x</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>y</span>, <span style=color:#a6e22e>x</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#a6e22e>y</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>x</span>)
+  <span style=color:#a6e22e>point</span>(<span style=color:#f92672>-</span><span style=color:#a6e22e>y</span>, <span style=color:#f92672>-</span><span style=color:#a6e22e>x</span>)
+}
+
+{{<span style=color:#f92672>&lt;</span> <span style=color:#960050;background-color:#1e0010>/p5-global-iframe &gt;}}</span>
+</code></pre></div><blockquote class="book-hint warning">
+Note that <code>p5</code> should be the name to be used for the sketch object variable.
+</blockquote>
+</div>
+</details>
+<br>
+<div align=center>
+<iframe id="Algoritmo del punto medio para circunferencias" style=width:420px;height:405px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+
+var p, x, y, r, ans = false, bandera = false;
+
+function setup() {
+  createCanvas(370, 380);
+  background(255)
+
+  //crear el slider para el radio de la circunferencua
+  slider = createSlider(20, 150, 100);
+  slider.position(20, 20);
+  r = slider.value();
+
+  //mover el centro del plano a 200, 200
+  translate(200,200)
+  strokeWeight(2)
+
+  //línea de texto que muestra el valor del slider
+  valueDisplayer = createP()
+  valueDisplayer.position(160, 0)
+
+  //botón para dibujar
+  button = createButton('Dibujar');
+  button.position(25,50);
+
+  //al presionarlo, se pone en blanco el lienzo
+  button.mousePressed(resetSketch)
+}
+
+function resetSketch(){
+  //dibujar un cuadrilátero blanco para poner blanco el lienzo
+  strokeWeight(0)
+  rect(-150, -150, 501, 501);
+  strokeWeight(2)
+
+  bandera = false
+  ans = false
+
+  //obtener valor del radio
+  updateValue()
+
+  //volver a iterar en la función draw
+  loop()
+}
+
+function draw() {
+  //texto que muestra el radio
+  valueDisplayer.html('Radio: '+slider.value());
+
+  //dibujar la circunferencia
+  if(bandera){
+    ans = midPoint()
+    if(ans==true){
+      noLoop()
+      bandera = false
+    }
+  }
+  loop()
+}
+
+function updateValue(){
+  r = slider.value();
+  p = 1 - r
+  x = 0
+  y = r
+  bandera = true
+}
+
+function midPoint(){
+  x += 1
+  if(p < 0){
+    drawPoints(x, y)
+    p = p + 2 * x + 3
+  }else if(p >= 0){
+    y = y - 1
+    drawPoints(x, y)
+    p = p + 2 * x - 2 * y + 5
+  }
+
+  if(x >= y){
+    return true
+  }
+  return false
+}
+
+function drawPoints(x,y){
+  //dibujar la cirncunferencia por los 4 puntos de vista
+  translate(200,200)
+  point(x, y)
+  point(-x, y)
+  point(x, -y)
+  point(-x, -y)
+  point(y, x)
+  point(-y, x)
+  point(y, -x)
+  point(-y, -x)
+}
+
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+</div>
+<br>
+<h2 id=algoritmo-dibujo-de-líneas>
+<strong>Algoritmo dibujo de líneas</strong>
+<a class=anchor href=#algoritmo-dibujo-de-l%c3%adneas>#</a>
+</h2>
+<p><a href=https://en.wikipedia.org/wiki/Line_drawing_algorithm>https://en.wikipedia.org/wiki/Line_drawing_algorithm</a></p>
+<p>usando el algoritmo de línea de Bresenham</p>
+<p><a href=https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm</a></p>
+<div align=center>
+<iframe id="Algoritmo dibujo de líneas" style=width:655px;height:505px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+
+var grid;
+var res = 5;
+var rows, cols;
+var pos;
+var vel;
+
+//para crear la matriz del lienzo
+function Array2D(rows, cols) {
+  var arr = new Array(rows);
+  for (var i = 0; i < rows; i++) {
+    arr[i] = new Array(cols);
+  }
+  return arr;
+}
+
+function setup() {
+  createCanvas(640, 480);
+  rows = width / res;
+  cols = height / res;
+
+  //crear y llenar la matriz del lienzo
+  grid = Array2D(rows, cols);
+  for (var x = 0; x < rows; x++) {
+    for (var y = 0; y < cols; y++) {
+      grid[x][y] = 0;
+    }
+  }
+  pos = createVector(0, 0);
+  vel = createVector(3, 5);  
+}
+
+function draw() {
+  background(255);
+
+  //poner la matriz en blanco
+  for (var x = 0; x < rows; x++) {
+    for (var y = 0; y < cols; y++) {
+      grid[x][y] = 0;
+    }
+  }
+
+  //llamr la función del algortimo con la posición del mouse
+  bresenhamLine(mouseX, mouseY, (width - 1) / res, (height - 1) / res);
+  for (var x = 0; x < rows; x++) {
+    for (var y = 0; y < cols; y++) {
+      var px = x * res;
+      var py = y * res;
+      stroke(0);
+      strokeWeight(res / 20);
+
+      //pintar en negro los puntos de la línea
+      if (grid[x][y] == 1) {
+        fill(0);
+      } else {
+        noFill();
+      }
+      square(px, py, res);
+    }
+  }
+  noLoop()
+
+  //recuadros de la sección para dibujar la línea
+  strokeWeight(2)
+  noFill()
+  rect(1, 1, 125, 95);
+  rect(1, 1, 638, 478);
+}
+
+//al hacer clic, se corre el algoritmo de dibujo
+function mousePressed() {
+  loop()
+}
+
+//algoritmo de Bresenham
+function bresenhamLine(x0, y0, x1, y1) {
+  var deltaX = x1 - x0;
+  var deltaY = y1 - y0;
+  var deltaErr = abs(deltaY / deltaX);
+  var error = 0;
+  var y = y0;
+  for (var x = x0; x <= x1; x++) {
+    grid[x][y] = 1;
+    error += deltaErr;
+    if (error >= 0.5) {
+      y += (deltaY > 0 ? 1 : -1);
+      error -= 1;
+    }
+  }
+}
+
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+</div></article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
