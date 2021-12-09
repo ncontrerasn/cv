@@ -17,7 +17,7 @@ https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.472db89e7f0b27004fb412de8c6807b522578b449c93131787fd46822241a2a7.js integrity="sha256-Ry24nn8LJwBPtBLejGgHtSJXi0SckxMXh/1GgiJBoqc=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.aefbbecb83043682e48f63b8f2594ccbfe16c623f42a8bd6ecb742a2f02b8a32.js integrity="sha256-rvu+y4MENoLkj2O48llMy/4WxiP0KovW7LdCovArijI=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -99,7 +99,12 @@ Blog
 <li>
 <ul>
 <li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
-<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a></li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<ul>
+<li><a href=#descripción><strong>Descripción</strong></a></li>
+<li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -431,9 +436,11 @@ Note that <code>p5</code> should be the name to be used for the sketch object va
 </blockquote>
 </div>
 </details>
-<p><a href=https://en.wikipedia.org/wiki/Line_drawing_algorithm>https://en.wikipedia.org/wiki/Line_drawing_algorithm</a></p>
-<p>usando el algoritmo de línea de Bresenham</p>
-<p><a href=https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm</a></p>
+<h3 id=descripción>
+<strong>Descripción</strong>
+<a class=anchor href=#descripci%c3%b3n>#</a>
+</h3>
+<p>Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de klinea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.</p>
 <div align=center>
 <iframe id="Algoritmo dibujo de líneas" style=width:655px;height:505px srcdoc="
         <!DOCTYPE html>
@@ -546,7 +553,21 @@ function bresenhamLine(x0, y0, x1, y1) {
           </body>
         </html>
       "></iframe>
-</div></article>
+</div>
+<h3 id=algoritmo-de-línea-de-bresenham>
+<strong>Algoritmo de línea de Bresenham</strong>
+<a class=anchor href=#algoritmo-de-l%c3%adnea-de-bresenham>#</a>
+</h3>
+<p>El algoritmo utilizado para la generación de la imagen previa es el algoritmo de Bresenham que determina los puntos que deben ser seleccionados en una representación n-dimensional para lograr una aproximación cercana a una linea recta entre dos puntos.</p>
+<p>Usa solamente:</p>
+<ul>
+<li>Suma de enteros</li>
+<li>Resta</li>
+<li>Cambio de bits</li>
+</ul>
+<p>A pesar de la existencia de otros algoritmos que tienen otros acercamientos, diferentes capacidades y tecnologías, el algoritmo de Bresenham se mantiene relevante debido a su simpleza y velocidad.</p>
+<p>Es ampliamente usado e implementado en varias cosas, sobretodo en procesadores graficos y tarjetas graficas, ya sea por firmware o hardware.</p>
+</article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
 </div>
@@ -563,7 +584,12 @@ function bresenhamLine(x0, y0, x1, y1) {
 <li>
 <ul>
 <li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
-<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a></li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<ul>
+<li><a href=#descripción><strong>Descripción</strong></a></li>
+<li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
