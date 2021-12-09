@@ -1,4 +1,5 @@
 ##**Algoritmo de visibilidad: Partición Binaria del Espacio**
+
 Es un método para subdividir recursivamente un espacio en elementos convexos
 empleando hiperplanos. Esta subdivisión da como resultado a una
 representación de la escena mediante una estructura de datos árbol
