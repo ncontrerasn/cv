@@ -99,10 +99,15 @@ function drawPoints(x,y){
 Note that `p5` should be the name to be used for the sketch object variable.
 {{< /hint >}}
 {{< /details >}}
+### **Descripción**
 
+En computación gráfica, el algoritmo del punto medio para circunferencias es un algoritmo usado para determinar los puntos necesarios para rasterizar una circunferencia. El algoritmo se puede generalizar a curvas cónicas. 
 <br/>
 
+
 <div align = "center">
+
+
 
 {{< p5-global-iframe id="Algoritmo del punto medio para circunferencias" width="420" height="405" >}}
 
@@ -206,7 +211,44 @@ function drawPoints(x,y){
 
 </div>
 
+### **Funcionamiento**
+
+Una circunferencia se define como un conjunto de puntos que se encuentran, en su totalidad, a una distancia determinada r de una posición central. Es posible reducir el cálculo al considerar la simetría de las circunferencias, la forma de la circunferencia es similar entre cuadrantes y simétrica entre octantes.
+
+Para aplicar el método del punto medio, definimos una función de circunferencia como :
+
+<div align="center">
+  <img src="../formulas.png">
+</div>
+
 <br>
+
+### **Algoritmo**
+
+ 1-Se capturan el radio r y el centro de la circunferencia (xc, yc).
+
+ 2-Se obtiene el primer punto de la circunferencia centrada en origen (xc, yc) como (0, r).
+
+ 3-Se calcula el valor inicial del parámetro de decisión como p0=5/4 - r.
+
+ Para k=0 hasta x>=y incrementa k
+
+    Si pk < 0 
+       *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk).
+       *pk+1=pk+2xk+1+1.
+    Sino
+        *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk-1).
+        *pk+1=pk+2xk+1+1-2yk+1.
+    //Donde 2xk+1=2xk+2  y  2yk+1=2yk-2
+ 
+ 4-Se determinan los puntos de simetría para los otros siete octantes.
+
+ 5-Se mueve cada posición del pixel calculada (x,y) a la trayectoria circular centrada en (xc, yc) 
+   y trazamos los valores de las coordenadas: x=x+xc y y=y+yc.
+
+ Fin.
+
+
 
 ## **Algoritmo dibujo de líneas**
 
