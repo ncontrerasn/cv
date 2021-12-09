@@ -17,7 +17,7 @@ https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.aefbbecb83043682e48f63b8f2594ccbfe16c623f42a8bd6ecb742a2f02b8a32.js integrity="sha256-rvu+y4MENoLkj2O48llMy/4WxiP0KovW7LdCovArijI=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.96f2fc77726d404aebab08579d0aa657e93b1c45dc4977c0f5996e9314af7e6a.js integrity="sha256-lvL8d3JtQErrqwhXnQqmV+k7HEXcSXfA9ZlukxSvfmo=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -98,10 +98,16 @@ Blog
 <ul>
 <li>
 <ul>
-<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
-<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a>
 <ul>
 <li><a href=#descripción><strong>Descripción</strong></a></li>
+<li><a href=#funcionamiento><strong>Funcionamiento</strong></a></li>
+<li><a href=#algoritmo><strong>Algoritmo</strong></a></li>
+</ul>
+</li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<ul>
+<li><a href=#descripción-1><strong>Descripción</strong></a></li>
 <li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
 </ul>
 </li>
@@ -211,7 +217,12 @@ Note that <code>p5</code> should be the name to be used for the sketch object va
 </blockquote>
 </div>
 </details>
-<br>
+<h3 id=descripción>
+<strong>Descripción</strong>
+<a class=anchor href=#descripci%c3%b3n>#</a>
+</h3>
+<p>En computación gráfica, el algoritmo del punto medio para circunferencias es un algoritmo usado para determinar los puntos necesarios para rasterizar una circunferencia. El algoritmo se puede generalizar a curvas cónicas.
+<br></p>
 <div align=center>
 <iframe id="Algoritmo del punto medio para circunferencias" style=width:420px;height:405px srcdoc="
         <!DOCTYPE html>
@@ -331,7 +342,36 @@ function drawPoints(x,y){
         </html>
       "></iframe>
 </div>
+<h3 id=funcionamiento>
+<strong>Funcionamiento</strong>
+<a class=anchor href=#funcionamiento>#</a>
+</h3>
+<p>Una circunferencia se define como un conjunto de puntos que se encuentran, en su totalidad, a una distancia determinada r de una posición central. Es posible reducir el cálculo al considerar la simetría de las circunferencias, la forma de la circunferencia es similar entre cuadrantes y simétrica entre octantes.</p>
+<p>Para aplicar el método del punto medio, definimos una función de circunferencia como :</p>
+<div align=center>
+<img src=../formulas.png>
+</div>
 <br>
+<h3 id=algoritmo>
+<strong>Algoritmo</strong>
+<a class=anchor href=#algoritmo>#</a>
+</h3>
+<p>1-Se capturan el radio r y el centro de la circunferencia (xc, yc).</p>
+<p>2-Se obtiene el primer punto de la circunferencia centrada en origen (xc, yc) como (0, r).</p>
+<p>3-Se calcula el valor inicial del parámetro de decisión como p0=5/4 - r.</p>
+<p>Para k=0 hasta x>=y incrementa k</p>
+<pre><code>Si pk &lt; 0 
+   *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk).
+   *pk+1=pk+2xk+1+1.
+Sino
+    *Siguiente punto de la circunferencia con centro (0,0) es (xk+1, yk-1).
+    *pk+1=pk+2xk+1+1-2yk+1.
+//Donde 2xk+1=2xk+2  y  2yk+1=2yk-2
+</code></pre>
+<p>4-Se determinan los puntos de simetría para los otros siete octantes.</p>
+<p>5-Se mueve cada posición del pixel calculada (x,y) a la trayectoria circular centrada en (xc, yc)
+y trazamos los valores de las coordenadas: x=x+xc y y=y+yc.</p>
+<p>Fin.</p>
 <h2 id=algoritmo-dibujo-de-líneas>
 <strong>Algoritmo dibujo de líneas</strong>
 <a class=anchor href=#algoritmo-dibujo-de-l%c3%adneas>#</a>
@@ -436,9 +476,9 @@ Note that <code>p5</code> should be the name to be used for the sketch object va
 </blockquote>
 </div>
 </details>
-<h3 id=descripción>
+<h3 id=descripción-1>
 <strong>Descripción</strong>
-<a class=anchor href=#descripci%c3%b3n>#</a>
+<a class=anchor href=#descripci%c3%b3n-1>#</a>
 </h3>
 <p>Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de klinea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.</p>
 <div align=center>
@@ -583,10 +623,16 @@ function bresenhamLine(x0, y0, x1, y1) {
 <ul>
 <li>
 <ul>
-<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a></li>
-<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<li><a href=#algoritmo-del-punto-medio-para-circunferencias><strong>Algoritmo del punto medio para circunferencias</strong></a>
 <ul>
 <li><a href=#descripción><strong>Descripción</strong></a></li>
+<li><a href=#funcionamiento><strong>Funcionamiento</strong></a></li>
+<li><a href=#algoritmo><strong>Algoritmo</strong></a></li>
+</ul>
+</li>
+<li><a href=#algoritmo-dibujo-de-líneas><strong>Algoritmo dibujo de líneas</strong></a>
+<ul>
+<li><a href=#descripción-1><strong>Descripción</strong></a></li>
 <li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
 </ul>
 </li>
