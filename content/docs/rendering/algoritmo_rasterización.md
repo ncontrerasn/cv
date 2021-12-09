@@ -311,11 +311,9 @@ Note that `p5` should be the name to be used for the sketch object variable.
 {{< /hint >}}
 {{< /details >}}
 
-https://en.wikipedia.org/wiki/Line_drawing_algorithm
+### **Descripción**
 
-usando el algoritmo de línea de Bresenham
-
-https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de klinea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.
 
 <div align = "center">
 
@@ -414,3 +412,16 @@ function bresenhamLine(x0, y0, x1, y1) {
 {{< /p5-global-iframe >}}
 
 </div>
+
+### **Algoritmo de línea de Bresenham**
+El algoritmo utilizado para la generación de la imagen previa es el algoritmo de Bresenham que determina los puntos que deben ser seleccionados en una representación n-dimensional para lograr una aproximación cercana a una linea recta entre dos puntos.
+
+Usa solamente: 
+- Suma de enteros
+- Resta
+- Cambio de bits
+
+A pesar de la existencia de otros algoritmos que tienen otros acercamientos, diferentes capacidades y tecnologías, el algoritmo de Bresenham se mantiene relevante debido a su simpleza y velocidad.
+
+Es ampliamente usado e implementado en varias cosas, sobretodo en procesadores graficos y tarjetas graficas, ya sea por firmware o hardware.
+
