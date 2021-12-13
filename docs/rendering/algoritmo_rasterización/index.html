@@ -15,7 +15,7 @@ El algoritmo comienza insertando en un nodo la región que se desea representar,
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.3d6e23c3136ca76b769d8a385786792932b263a006b71dc82acf431f9338ddd3.js integrity="sha256-PW4jwxNsp2t2nYo4V4Z5KTKyY6AGtx3IKs9DH5M43dM=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.11132649a0641ccf101e7337fcc55b8b2801dd830ef678a9b7845dfc5a3ac7e1.js integrity="sha256-ERMmSaBkHM8QHnM3/MVbiygB3YMO9nipt4Rd/Fo6x+E=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -294,6 +294,10 @@ function resetSketch(){
 
   //volver a iterar en la función draw
   loop()
+  col1 = num()
+  col2 = num()
+  col3 = num()
+  stroke(col1, col2, col3)
 }
 
 function draw() {
@@ -317,6 +321,10 @@ function updateValue(){
   x = 0
   y = r
   bandera = true
+}
+
+function num() {
+  return Math.floor(Math.random() * 256);
 }
 
 function midPoint(){
@@ -639,8 +647,15 @@ function draw() {
     }
   }
 
+  function num() {
+    return Math.floor(Math.random() * 256);
+  }
+
   //llamar la función del algortimo de bresenham con la posición del mouse
   bresenhamLine(mouseX, mouseY, (width - 1) / res, (height - 1) / res);
+  col1 = num()
+  col2 = num()
+  col3 = num()
   for (var x = 0; x < rows; x++) {
     for (var y = 0; y < cols; y++) {
       var px = x * res;
@@ -650,7 +665,7 @@ function draw() {
 
       //pintar en negro los puntos de la línea
       if (grid[x][y] == 1) {
-        fill(0);
+        fill(col1, col2, col3);
       } else {
         noFill();
       }
