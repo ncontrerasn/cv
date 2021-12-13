@@ -275,7 +275,7 @@ Para aplicar el método del punto medio, definimos una función de circunferenci
 {{</* p5-global-iframe id="Algoritmo dibujo de líneas" width="655" height="505" >}}
 
 var grid;
-var res = 5;
+var res = 5, tam = 1;
 var rows, cols;
 var pos;
 var vel;
@@ -291,6 +291,24 @@ function Array2D(rows, cols) {
 
 function setup() {
   createCanvas(640, 480);
+
+  //botones para definir el tamaño de la cuadrícula
+  bPeq = createButton('Pequeña');
+  bPeq.position(500, 25);
+  bPeq.mousePressed(peq)
+
+  bMed = createButton('Mediana');
+  bMed.position(500, 60);
+  bMed.mousePressed(med)
+
+  bGran = createButton('Grande');
+  bGran.position(500, 95);
+  bGran.mousePressed(gran)
+
+  dibujarCuadricula()
+}
+
+function dibujarCuadricula(){
   rows = width / res;
   cols = height / res;
 
@@ -305,6 +323,24 @@ function setup() {
   vel = createVector(3, 5);  
 }
 
+function peq(){
+  tam = 2;
+  res = 2;
+  dibujarCuadricula()
+}
+
+function med(){
+  tam = 1;
+  res = 5;
+  dibujarCuadricula()
+}
+
+function gran(){
+  tam = 3;
+  res = 8;
+  dibujarCuadricula() 
+}
+
 function draw() {
   background(255);
 
@@ -315,7 +351,7 @@ function draw() {
     }
   }
 
-  //llamr la función del algortimo con la posición del mouse
+  //llamar la función del algortimo de bresenham con la posición del mouse
   bresenhamLine(mouseX, mouseY, (width - 1) / res, (height - 1) / res);
   for (var x = 0; x < rows; x++) {
     for (var y = 0; y < cols; y++) {
@@ -335,11 +371,26 @@ function draw() {
   }
   noLoop()
 
+  //dibujar recuadro que enmarca de la animación
+  fill(255)
+  rect(380, 51, 100, 30);
+  
+  //texto para indicar el tamaño de la cuadrícula
+  textSize(12);
+  fill(0)
+  text('Cuadrícula', 400, 70)
+
   //recuadros de la sección para dibujar la línea
   strokeWeight(2)
   noFill()
-  rect(1, 1, 125, 95);
   rect(1, 1, 638, 478);
+
+  if(tam == 1)
+    rect(1, 1, 125, 95);
+  if(tam == 2)
+    rect(1, 1, 320, 240);
+  if(tam == 3)
+    rect(1, 1, 80, 62);
 }
 
 //al hacer clic, se corre el algoritmo de dibujo
@@ -380,7 +431,7 @@ Para la computación gráfica, un algoritmo para dibujar lineas consiste en apro
 {{< p5-global-iframe id="Algoritmo dibujo de líneas" width="655" height="505" >}}
 
 var grid;
-var res = 5;
+var res = 5, tam = 1;
 var rows, cols;
 var pos;
 var vel;
@@ -396,6 +447,24 @@ function Array2D(rows, cols) {
 
 function setup() {
   createCanvas(640, 480);
+
+  //botones para definir el tamaño de la cuadrícula
+  bPeq = createButton('Pequeña');
+  bPeq.position(500, 25);
+  bPeq.mousePressed(peq)
+
+  bMed = createButton('Mediana');
+  bMed.position(500, 60);
+  bMed.mousePressed(med)
+
+  bGran = createButton('Grande');
+  bGran.position(500, 95);
+  bGran.mousePressed(gran)
+
+  dibujarCuadricula()
+}
+
+function dibujarCuadricula(){
   rows = width / res;
   cols = height / res;
 
@@ -410,6 +479,24 @@ function setup() {
   vel = createVector(3, 5);  
 }
 
+function peq(){
+  tam = 2;
+  res = 2;
+  dibujarCuadricula()
+}
+
+function med(){
+  tam = 1;
+  res = 5;
+  dibujarCuadricula()
+}
+
+function gran(){
+  tam = 3;
+  res = 8;
+  dibujarCuadricula() 
+}
+
 function draw() {
   background(255);
 
@@ -420,7 +507,7 @@ function draw() {
     }
   }
 
-  //llamr la función del algortimo con la posición del mouse
+  //llamar la función del algortimo de bresenham con la posición del mouse
   bresenhamLine(mouseX, mouseY, (width - 1) / res, (height - 1) / res);
   for (var x = 0; x < rows; x++) {
     for (var y = 0; y < cols; y++) {
@@ -440,11 +527,26 @@ function draw() {
   }
   noLoop()
 
+  //dibujar recuadro que enmarca de la animación
+  fill(255)
+  rect(380, 51, 100, 30);
+  
+  //texto para indicar el tamaño de la cuadrícula
+  textSize(12);
+  fill(0)
+  text('Cuadrícula', 400, 70)
+
   //recuadros de la sección para dibujar la línea
   strokeWeight(2)
   noFill()
-  rect(1, 1, 125, 95);
   rect(1, 1, 638, 478);
+
+  if(tam == 1)
+    rect(1, 1, 125, 95);
+  if(tam == 2)
+    rect(1, 1, 320, 240);
+  if(tam == 3)
+    rect(1, 1, 80, 62);
 }
 
 //al hacer clic, se corre el algoritmo de dibujo
@@ -472,6 +574,8 @@ function bresenhamLine(x0, y0, x1, y1) {
 {{< /p5-global-iframe >}}
 
 </div>
+
+**Nota:** El recuadro de la esquina superior izquierda es la representación a escala de la zona de la animación de donde va a ir la línea.
 
 ### **Algoritmo de línea de Bresenham**
 El algoritmo utilizado para la generación de la imagen previa es el algoritmo de Bresenham que determina los puntos que deben ser seleccionados en una representación n-dimensional para lograr una aproximación cercana a una linea recta entre dos puntos.
