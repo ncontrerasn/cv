@@ -170,6 +170,10 @@ function resetSketch(){
 
   //volver a iterar en la función draw
   loop()
+  col1 = num()
+  col2 = num()
+  col3 = num()
+  stroke(col1, col2, col3)
 }
 
 function draw() {
@@ -193,6 +197,10 @@ function updateValue(){
   x = 0
   y = r
   bandera = true
+}
+
+function num() {
+  return Math.floor(Math.random() * 256);
 }
 
 function midPoint(){
@@ -507,8 +515,15 @@ function draw() {
     }
   }
 
+  function num() {
+    return Math.floor(Math.random() * 256);
+  }
+
   //llamar la función del algortimo de bresenham con la posición del mouse
   bresenhamLine(mouseX, mouseY, (width - 1) / res, (height - 1) / res);
+  col1 = num()
+  col2 = num()
+  col3 = num()
   for (var x = 0; x < rows; x++) {
     for (var y = 0; y < cols; y++) {
       var px = x * res;
@@ -518,7 +533,7 @@ function draw() {
 
       //pintar en negro los puntos de la línea
       if (grid[x][y] == 1) {
-        fill(0);
+        fill(col1, col2, col3);
       } else {
         noFill();
       }
