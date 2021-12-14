@@ -17,7 +17,7 @@ https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.8f9b4f4811e6e03f13cdab94de230143a013d7f8f212302728fbb931cbb0a38b.js integrity="sha256-j5tPSBHm4D8TzauU3iMBQ6AT1/jyEjAnKPu5Mcuwo4s=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.56b14b08fbfc9c200d90cef4f3577bd9b02b434993c58c403976416135d6509a.js integrity="sha256-VrFLCPv8nCANkM7081d72bArQ0mTxYxAOXZBYTXWUJo=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -539,7 +539,7 @@ Note that <code>p5</code> should be the name to be used for the sketch object va
 <strong>Descripción</strong>
 <a class=anchor href=#descripci%c3%b3n-1>#</a>
 </h3>
-<p>Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de klinea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.</p>
+<p>Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de linea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.</p>
 <div align=center>
 <iframe id="Algoritmo dibujo de líneas" style=width:655px;height:505px srcdoc="
         <!DOCTYPE html>
@@ -725,6 +725,62 @@ function bresenhamLine(x0, y0, x1, y1) {
 </ul>
 <p>A pesar de la existencia de otros algoritmos que tienen otros acercamientos, diferentes capacidades y tecnologías, el algoritmo de Bresenham se mantiene relevante debido a su simpleza y velocidad.</p>
 <p>Es ampliamente usado e implementado en varias cosas, sobretodo en procesadores graficos y tarjetas graficas, ya sea por firmware o hardware.</p>
+<p>Para desccribir mejor el algoritmo se pueden describir ciertos pasos generales, seguido de un pseudocodigo para ilustrar mejor su implementación:</p>
+<pre><code>Funcion LineaBresenham(X1, Y1, X2, Y2)
+  // 0 - Distancias que se desplazan en cada eje
+  dY = (Y2 - Y1)
+  dX = (X2 - X1)
+
+  // 1 - Incrementos para las secciones con avance inclinado
+  Si (dY &gt;= 0) luego
+      IncYi = 1
+  Sino
+      dY = -dY
+      IncYi = -1
+  Fin si
+
+  Si (dX &gt;= 0) luego
+      IncXi = 1
+  Sino
+      dX = -dX
+      IncXi = -1
+  Fin si
+
+  // 2 - Incrementos para las secciones con avance recto:
+  Si (dX &gt;= dY) luego
+      IncYr = 0
+      IncXr = IncXi
+  Sino
+      IncXr = 0
+      IncYr = IncYi
+
+      // Cuando dy es mayor que dx, se intercambian, para reutilizar el mismo bucle.
+      // ver octantes blancos en la imagen encima del código
+      k = dX: dX = dY: dY = k
+  Fin si
+
+  // 3  - Inicializar valores (y de error).
+  X = X1: Y = Y1
+  avR = (2 * dY)
+  av = (avR - dX)
+  avI = (av - dX)
+
+  // 4  - Bucle para el trazado de las línea.
+  Hacer
+      DibujarPixel(X, Y, Color) // Como mínimo se dibujará siempre 1 píxel (punto).
+      Mensaje(av + &quot; &quot;) // (debug) para ver los valores de error global que van apareciendo.
+      Si (av &gt;= 0) luego
+          X = (X + IncXi)     // X aumenta en inclinado.
+          Y = (Y + IncYi)     // Y aumenta en inclinado.
+          av = (av + avI)     // Avance Inclinado
+      Sino
+          X = (X + IncXr)     // X aumenta en recto.
+          Y = (Y + IncYr)     // Y aumenta en recto.
+          av = (av + avR)     // Avance Recto
+      Fin si
+  Repetir hasta que (X = X2) // NOTA: La condición de 'Repetir Hasta', se debe cambiar si se elige 'Repetir Mientras'
+</code></pre>
+<p>Fin funcion</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
