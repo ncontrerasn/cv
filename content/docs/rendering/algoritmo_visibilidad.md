@@ -29,6 +29,7 @@ Lo anterior puede observarse en la imagen a continuación:
 </div>
 
 <br/>
+
 ### **Recorrido del árbol:**
 
 Como la estructura de datos que representa la región corresponde
