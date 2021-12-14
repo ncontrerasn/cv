@@ -5,7 +5,11 @@
 Es un método para subdividir recursivamente un espacio en elementos convexos
 empleando hiperplanos. Esta subdivisión da como resultado a una
 representación de la escena mediante una estructura de datos árbol
-conocido como el arbol de partición binaria del espacio
+conocido como el arbol de partición binaria del espacio, este algoritmo surge
+dada la necesidad de ordenar las primitivas que se desean dibujar de forma
+eficiente determinando cuáles son las que están delante y detrás de otras, lo
+cual optimiza el proceso de renderizado. Fue muy útil para la computación gráfica
+tridimensional.
 
 ### **Construcción del árbol:**
 
@@ -34,8 +38,11 @@ Lo anterior puede observarse en la imagen a continuación:
 
 Como la estructura de datos que representa la región corresponde
 a un árbol binario, es necesario recorrerlo con el algoritmo de
-recorrido inorder, en el cual se visita primero el subárbol izquierdo,
-luego el nodo raíz y por último el subárbol derecho.
+recorrido inorder, en el cual se recorre en inorder el subárbol
+izquierdo, luego se visita el nodo raíz y por último se recorre en inorder
+el subárbol derecho.
+Luego de obtenido el recorrido, se aplica el algoritmo del pintor a la
+secuencia inorder obtenida.
 
 <div align="center">
   <img src="../INORDER.gif">
