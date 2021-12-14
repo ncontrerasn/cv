@@ -1,9 +1,5 @@
 ## **Algoritmo del punto medio para circunferencias**
 
-https://es.wikipedia.org/wiki/Algoritmo_del_punto_medio_para_circunferencias
-
-https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
-
 <br/>
 
 {{< details title="p5-global-iframe markdown" open=false >}}
@@ -104,10 +100,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 En computación gráfica, el algoritmo del punto medio para circunferencias es un algoritmo usado para determinar los puntos necesarios para rasterizar una circunferencia. El algoritmo se puede generalizar a curvas cónicas. 
 <br/>
 
-
 <div align = "center">
-
-
 
 {{< p5-global-iframe id="Algoritmo del punto medio para circunferencias" width="420" height="405" >}}
 
