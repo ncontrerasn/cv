@@ -212,6 +212,12 @@ function drawPoints(x,y){
 
 </div>
 
+### **Explicación**
+
+<div align="center">
+  <img src="../e1.jpeg">
+</div>
+
 ### **Funcionamiento**
 
 Una circunferencia se define como un conjunto de puntos que se encuentran, en su totalidad, a una distancia determinada r de una posición central. Es posible reducir el cálculo al considerar la simetría de las circunferencias, la forma de la circunferencia es similar entre cuadrantes y simétrica entre octantes.
