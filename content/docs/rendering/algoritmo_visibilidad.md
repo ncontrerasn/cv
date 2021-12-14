@@ -13,5 +13,5 @@ para cada una de las subregiones.
 Lo anterior puede observarse en la imagen a continuación:
 
 <div align="center">
-  <img src="../BSP.gif">
+  <img src="../BSP2.gif">
 </div>
