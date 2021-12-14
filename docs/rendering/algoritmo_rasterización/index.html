@@ -17,7 +17,7 @@ https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.56b14b08fbfc9c200d90cef4f3577bd9b02b434993c58c403976416135d6509a.js integrity="sha256-VrFLCPv8nCANkM7081d72bArQ0mTxYxAOXZBYTXWUJo=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.ced54e1c38eeff8bf3566384b1ccbfa9c896ee4d6b03a14755e8439104450539.js integrity="sha256-ztVOHDju/4vzVmOEscy/qciW7k1rA6FHVehDkQRFBTk=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -109,6 +109,11 @@ Blog
 <ul>
 <li><a href=#descripción-1><strong>Descripción</strong></a></li>
 <li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
+</ul>
+</li>
+<li><a href=#antialiasing><strong>Antialiasing</strong></a>
+<ul>
+<li><a href=#métodos-de-antialiasing><strong>Métodos de antialiasing:</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -781,6 +786,52 @@ function bresenhamLine(x0, y0, x1, y1) {
   Repetir hasta que (X = X2) // NOTA: La condición de 'Repetir Hasta', se debe cambiar si se elige 'Repetir Mientras'
 </code></pre>
 <p>Fin funcion</p>
+<h2 id=antialiasing>
+<strong>Antialiasing</strong>
+<a class=anchor href=#antialiasing>#</a>
+</h2>
+<p>Conocido también como suavizado, antiescalonamiento o suavizado de bordes o contorno. Son los procedimientos que permiten minimizar el solapamiento o aliasing que se produce al presentar una señal de alta resolución en un medio de menor resolución. En la mayoría de casos, consiste en eliminar la información de frecuencia demsasiado elevada. Cuando esa información no es filtrada, pueden producirse artefactos impredecibles (Imagen a).</p>
+<div align=center>
+<img src=../a1.JPG>
+<br>
+Imagen a
+</div>
+<p>En el procesamiento de señales digitales, un ejemplo de un método de antialiasing, es el filtrado de frecuencias que exceden el criterio de Nyquist, limitando el ancho de banda de la señal.</p>
+<p>Adentrándonos más en el campo de la computación gráfica, antialiasing es un algoritmo que permite evitar los artefactos asociados al aliasing gráfico, como en el caso de los patrones de Moiré.</p>
+<div align=center>
+<img src=../i3.JPG>
+</div>
+<p><strong>Patrón de Moiré</strong>: Es un patrón de interferencia que se forma al colocar una rejilla sobre otra en cierto ángulo. La visión humana crea la ilusión de bandas oscuras y claras horizontales.</p>
+<p>La Imagen a muestra distorsiones en la parte superior, ya que el antialiasing no se utiliza. En la siguiente Imagen (b) se ha usado un esquema de antialiasing.</p>
+<div align=center>
+<img src=../a2.JPG>
+<br>
+Imagen b
+</div>
+<p>Los cuadros negros y balncos de la parte superior se funden en gris, lo que se espaera cuando no se pueden mostrar los detalles precisamente. La Imagen c muestra la imagen con una segunda estrategia de antialiasing basada en la transformada de Fourier.</p>
+<div align=center>
+<img src=../a3.JPG>
+<br>
+Imagen c
+</div>
+<h3 id=métodos-de-antialiasing>
+<strong>Métodos de antialiasing:</strong>
+<a class=anchor href=#m%c3%a9todos-de-antialiasing>#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Sobremuestreo o posfiltración:</strong> los objetos se muestrean con una resolución más alta y se despliegan con una resolución menor. Se considera una resolución de pantalla mayor que la que realmente tiene. Se calculan las intensidades en las posiciones de la cuadrícula de subpixel y se combinan los resultados para obtener las intensidades de los píxeles.</p>
+</li>
+<li>
+<p><strong>Máscaras de peso de píxeles:</strong> Consiste en dar más peso a los subpixeles cercanos al centro del área de un píxel, ya que estos subpíxeles son más importantes al determinar la intensidad de un píxel.</p>
+</li>
+<li>
+<p><strong>Muestreo de área o prefiltración:</strong> Determina la intensidad del píxel al calcular el translape de cada píxel con los objetos que se deben desplegar. Las áreas en que se sobreponen píxeles se obtienen al determinar dónde se intersecan las fronteras del objeto con las fronteras de píxeles individuales.</p>
+</li>
+<li>
+<p><strong>Fases de píxel:</strong> Cambiar la posición de despliegue de las áreas de píxeles. Se aplica mediante microcolocación del haz de electrones en relación con la geometría del objeto.</p>
+</li>
+</ul>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
@@ -808,6 +859,11 @@ function bresenhamLine(x0, y0, x1, y1) {
 <ul>
 <li><a href=#descripción-1><strong>Descripción</strong></a></li>
 <li><a href=#algoritmo-de-línea-de-bresenham><strong>Algoritmo de línea de Bresenham</strong></a></li>
+</ul>
+</li>
+<li><a href=#antialiasing><strong>Antialiasing</strong></a>
+<ul>
+<li><a href=#métodos-de-antialiasing><strong>Métodos de antialiasing:</strong></a></li>
 </ul>
 </li>
 </ul>
