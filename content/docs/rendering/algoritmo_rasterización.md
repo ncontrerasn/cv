@@ -414,7 +414,7 @@ Note that `p5` should be the name to be used for the sketch object variable.
 
 ### **Descripción**
 
-Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de klinea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.
+Para la computación gráfica, un algoritmo para dibujar lineas consiste en aproximar un segmento de linea en un medio discreto, como las pantallas que utilizan pixeles para mostrar una imagen.
 
 <div align = "center">
 
@@ -585,4 +585,61 @@ Usa solamente:
 A pesar de la existencia de otros algoritmos que tienen otros acercamientos, diferentes capacidades y tecnologías, el algoritmo de Bresenham se mantiene relevante debido a su simpleza y velocidad.
 
 Es ampliamente usado e implementado en varias cosas, sobretodo en procesadores graficos y tarjetas graficas, ya sea por firmware o hardware.
+
+Para desccribir mejor el algoritmo se pueden describir ciertos pasos generales, seguido de un pseudocodigo para ilustrar mejor su implementación:
+
+    Funcion LineaBresenham(X1, Y1, X2, Y2)
+      // 0 - Distancias que se desplazan en cada eje
+      dY = (Y2 - Y1)
+      dX = (X2 - X1)
+    
+      // 1 - Incrementos para las secciones con avance inclinado
+      Si (dY >= 0) luego
+          IncYi = 1
+      Sino
+          dY = -dY
+          IncYi = -1
+      Fin si
+    
+      Si (dX >= 0) luego
+          IncXi = 1
+      Sino
+          dX = -dX
+          IncXi = -1
+      Fin si
+    
+      // 2 - Incrementos para las secciones con avance recto:
+      Si (dX >= dY) luego
+          IncYr = 0
+          IncXr = IncXi
+      Sino
+          IncXr = 0
+          IncYr = IncYi
+    
+          // Cuando dy es mayor que dx, se intercambian, para reutilizar el mismo bucle.
+          // ver octantes blancos en la imagen encima del código
+          k = dX: dX = dY: dY = k
+      Fin si
+    
+      // 3  - Inicializar valores (y de error).
+      X = X1: Y = Y1
+      avR = (2 * dY)
+      av = (avR - dX)
+      avI = (av - dX)
+    
+      // 4  - Bucle para el trazado de las línea.
+      Hacer
+          DibujarPixel(X, Y, Color) // Como mínimo se dibujará siempre 1 píxel (punto).
+          Mensaje(av + " ") // (debug) para ver los valores de error global que van apareciendo.
+          Si (av >= 0) luego
+              X = (X + IncXi)     // X aumenta en inclinado.
+              Y = (Y + IncYi)     // Y aumenta en inclinado.
+              av = (av + avI)     // Avance Inclinado
+          Sino
+              X = (X + IncXr)     // X aumenta en recto.
+              Y = (Y + IncYr)     // Y aumenta en recto.
+              av = (av + avR)     // Avance Recto
+          Fin si
+      Repetir hasta que (X = X2) // NOTA: La condición de 'Repetir Hasta', se debe cambiar si se elige 'Repetir Mientras'
+   Fin funcion
 
