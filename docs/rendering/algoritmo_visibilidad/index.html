@@ -2,21 +2,21 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="**Algoritmo de visibilidad: Partición Binaria del Espacio: ** #   Es un método para subdividir recursivamente un espacio en elementos convexos empleando hiperplanos. Esta subdivisión da como resultado a una representación de la escena mediante una estructura de datos árbol conocido como el arbol de partición binaria del espacio
-**Construcción del árbol: ** #  El algoritmo comienza insertando un hiperplano en una de las caras del polígono e inserta el identificador de la cara en el nodo raíz del árbol y separa las caras restantes en dos listas, una lista de caras frontales y otra lista de caras posteriores.">
+<meta name=description content="Algoritmo de visibilidad: Partición Binaria del Espacio: #   Es un método para subdividir recursivamente un espacio en elementos convexos empleando hiperplanos. Esta subdivisión da como resultado a una representación de la escena mediante una estructura de datos árbol conocido como el arbol de partición binaria del espacio
+Construcción del árbol: #  El algoritmo comienza insertando un hiperplano en una de las caras del polígono e inserta el identificador de la cara en el nodo raíz del árbol y separa las caras restantes en dos listas, una lista de caras frontales y otra lista de caras posteriores.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="**Algoritmo de visibilidad: Partición Binaria del Espacio: ** #   Es un método para subdividir recursivamente un espacio en elementos convexos empleando hiperplanos. Esta subdivisión da como resultado a una representación de la escena mediante una estructura de datos árbol conocido como el arbol de partición binaria del espacio
-**Construcción del árbol: ** #  El algoritmo comienza insertando un hiperplano en una de las caras del polígono e inserta el identificador de la cara en el nodo raíz del árbol y separa las caras restantes en dos listas, una lista de caras frontales y otra lista de caras posteriores.">
+<meta property="og:description" content="Algoritmo de visibilidad: Partición Binaria del Espacio: #   Es un método para subdividir recursivamente un espacio en elementos convexos empleando hiperplanos. Esta subdivisión da como resultado a una representación de la escena mediante una estructura de datos árbol conocido como el arbol de partición binaria del espacio
+Construcción del árbol: #  El algoritmo comienza insertando un hiperplano en una de las caras del polígono e inserta el identificador de la cara en el nodo raíz del árbol y separa las caras restantes en dos listas, una lista de caras frontales y otra lista de caras posteriores.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/rendering/algoritmo_visibilidad/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-13T22:05:14-05:00">
+<meta property="article:modified_time" content="2021-12-13T22:07:43-05:00">
 <title>Algoritmo Visibilidad | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.bf233a8a854b682405f448398fd9205f7861922d177a8c2f5d0a85ee68610003.js integrity="sha256-vyM6ioVLaCQF9Eg5j9kgX3hhki0XeowvXQqF7mhhAAM=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.fe90368633f40587db7aa6b1a7f29627f01bf5687fb1f673adfea3d702ee9f5c.js integrity="sha256-/pA2hjP0BYfbeqaxp/KWJ/Ab9Wh/sfZzrf6j1wLun1w=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -99,8 +99,8 @@ Blog
 <ul>
 <li>
 <ul>
-<li><a href=#algoritmo-de-visibilidad-partición-binaria-del-espacio->**Algoritmo de visibilidad: Partición Binaria del Espacio: **</a></li>
-<li><a href=#construcción-del-árbol->**Construcción del árbol: **</a></li>
+<li><a href=#algoritmo-de-visibilidad-partición-binaria-del-espacio><strong>Algoritmo de visibilidad: Partición Binaria del Espacio:</strong></a></li>
+<li><a href=#construcción-del-árbol><strong>Construcción del árbol:</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -109,18 +109,18 @@ Blog
 </nav>
 </aside>
 </header>
-<article class=markdown><h3 id=algoritmo-de-visibilidad-partición-binaria-del-espacio->
-**Algoritmo de visibilidad: Partición Binaria del Espacio: **
-<a class=anchor href=#algoritmo-de-visibilidad-partici%c3%b3n-binaria-del-espacio->#</a>
+<article class=markdown><h3 id=algoritmo-de-visibilidad-partición-binaria-del-espacio>
+<strong>Algoritmo de visibilidad: Partición Binaria del Espacio:</strong>
+<a class=anchor href=#algoritmo-de-visibilidad-partici%c3%b3n-binaria-del-espacio>#</a>
 </h3>
 <br>
 <p>Es un método para subdividir recursivamente un espacio en elementos convexos
 empleando hiperplanos. Esta subdivisión da como resultado a una
 representación de la escena mediante una estructura de datos árbol
 conocido como el arbol de partición binaria del espacio</p>
-<h3 id=construcción-del-árbol->
-**Construcción del árbol: **
-<a class=anchor href=#construcci%c3%b3n-del-%c3%a1rbol->#</a>
+<h3 id=construcción-del-árbol>
+<strong>Construcción del árbol:</strong>
+<a class=anchor href=#construcci%c3%b3n-del-%c3%a1rbol>#</a>
 </h3>
 <p>El algoritmo comienza insertando un hiperplano en una de las caras
 del polígono e inserta el identificador de la cara en el nodo raíz
@@ -137,7 +137,7 @@ que las sublistas sólo contengan un elemento.</p>
 <img src=../BSP3.gif>
 </div>
 <br>
-### **Recorrido del árbol: **
+### **Recorrido del árbol:**
 <p>Como la estructura de datos que representa la región corresponde
 a un árbol binario, es necesario recorrerlo con el algoritmo de
 recorrido inorder, en el cual se visita primero el subárbol izquierdo,
@@ -145,7 +145,7 @@ luego el nodo raíz y por último el subárbol derecho.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/d6c7559aa736c88fb5cd20934889071342e8e605 title="Last modified by jreinaz | December 14, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/5201bbb4d5acc7282558332effc33b4f4f6c96c1 title="Last modified by jreinaz | December 14, 2021" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>December 14, 2021</span>
 </a>
@@ -165,8 +165,8 @@ luego el nodo raíz y por último el subárbol derecho.</p>
 <ul>
 <li>
 <ul>
-<li><a href=#algoritmo-de-visibilidad-partición-binaria-del-espacio->**Algoritmo de visibilidad: Partición Binaria del Espacio: **</a></li>
-<li><a href=#construcción-del-árbol->**Construcción del árbol: **</a></li>
+<li><a href=#algoritmo-de-visibilidad-partición-binaria-del-espacio><strong>Algoritmo de visibilidad: Partición Binaria del Espacio:</strong></a></li>
+<li><a href=#construcción-del-árbol><strong>Construcción del árbol:</strong></a></li>
 </ul>
 </li>
 </ul>
