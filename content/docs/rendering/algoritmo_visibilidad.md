@@ -36,3 +36,7 @@ Como la estructura de datos que representa la región corresponde
 a un árbol binario, es necesario recorrerlo con el algoritmo de
 recorrido inorder, en el cual se visita primero el subárbol izquierdo,
 luego el nodo raíz y por último el subárbol derecho.
+
+<div align="center">
+  <img src="../INORDER.gif">
+</div>
