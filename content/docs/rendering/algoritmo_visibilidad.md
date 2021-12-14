@@ -1,4 +1,4 @@
-### **Algoritmo de visibilidad: Partición Binaria del Espacio: **
+### **Algoritmo de visibilidad: Partición Binaria del Espacio:**
 
 <br/>
 
@@ -7,7 +7,7 @@ empleando hiperplanos. Esta subdivisión da como resultado a una
 representación de la escena mediante una estructura de datos árbol
 conocido como el arbol de partición binaria del espacio
 
-### **Construcción del árbol: **
+### **Construcción del árbol:**
 
 El algoritmo comienza insertando un hiperplano en una de las caras
 del polígono e inserta el identificador de la cara en el nodo raíz
@@ -29,7 +29,7 @@ Lo anterior puede observarse en la imagen a continuación:
 </div>
 
 <br/>
-### **Recorrido del árbol: **
+### **Recorrido del árbol:**
 
 Como la estructura de datos que representa la región corresponde
 a un árbol binario, es necesario recorrerlo con el algoritmo de
