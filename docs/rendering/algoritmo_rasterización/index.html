@@ -13,7 +13,7 @@
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.0eabd2d4ddf77eaf9057dddc4fdf3312425e2e0f9f94745d26c279f2a30f07e4.js integrity="sha256-DqvS1N33fq+QV93cT98zEkJeLg+flHRdJsJ58qMPB+Q=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.08712fcb2dc9b24aec55589172366dd3fff6e80f93a5445ed7ce32e170001504.js integrity="sha256-CHEvyy3JskrsVViRcjZt0//26A+TpURe184y4XAAFQQ=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -788,6 +788,17 @@ function bresenhamLine(x0, y0, x1, y1) {
   Repetir hasta que (X = X2) // NOTA: La condición de 'Repetir Hasta', se debe cambiar si se elige 'Repetir Mientras'
 </code></pre>
 <p>Fin funcion</p>
+<p>Para resumir:
+1- Entran los puntos extremos de la linea</p>
+<p>2- Se dibuja el punto inicial</p>
+<p>3- Se calculan las constantes dx, dy, 2dy y 2dy-2dx</p>
+<p>4- Se opera p0, que es el primer paramentro de decisión
+p0 = 2dy-dx</p>
+<p>5- En cada xk en la linea, se comprueba si pk es menor o mayor a 0:</p>
+<pre><code>Si es menor, pk+1 es igual a pk+2dy
+Si es mayor, pk+1 es igual a pk+2dy-2dx
+</code></pre>
+<p>Todo esto se repite dx-1 veces</p>
 <h2 id=antialiasing>
 <strong>Antialiasing</strong>
 <a class=anchor href=#antialiasing>#</a>
