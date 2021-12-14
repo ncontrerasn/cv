@@ -256,8 +256,6 @@ Para aplicar el método del punto medio, definimos una función de circunferenci
 
  Fin.
 
-
-
 ## **Algoritmo dibujo de líneas**
 
 {{< details title="p5-global-iframe markdown" open=false >}}
@@ -586,3 +584,46 @@ A pesar de la existencia de otros algoritmos que tienen otros acercamientos, dif
 
 Es ampliamente usado e implementado en varias cosas, sobretodo en procesadores graficos y tarjetas graficas, ya sea por firmware o hardware.
 
+## **Antialiasing**
+Conocido también como suavizado, antiescalonamiento o suavizado de bordes o contorno. Son los procedimientos que permiten minimizar el solapamiento o aliasing que se produce al presentar una señal de alta resolución en un medio de menor resolución. En la mayoría de casos, consiste en eliminar la información de frecuencia demsasiado elevada. Cuando esa información no es filtrada, pueden producirse artefactos impredecibles (Imagen a).
+
+<div align="center">
+  <img src="../a1.JPG">
+  <br>
+  Imagen a
+</div>
+
+En el procesamiento de señales digitales, un ejemplo de un método de antialiasing, es el filtrado de frecuencias que exceden el criterio de Nyquist, limitando el ancho de banda de la señal.
+
+Adentrándonos más en el campo de la computación gráfica, antialiasing es un algoritmo que permite evitar los artefactos asociados al aliasing gráfico, como en el caso de los patrones de Moiré.
+
+<div align="center">
+  <img src="../i3.JPG">
+</div>
+
+**Patrón de Moiré**: Es un patrón de interferencia que se forma al colocar una rejilla sobre otra en cierto ángulo. La visión humana crea la ilusión de bandas oscuras y claras horizontales.
+
+La Imagen a muestra distorsiones en la parte superior, ya que el antialiasing no se utiliza. En la siguiente Imagen (b) se ha usado un esquema de antialiasing.
+
+<div align="center">
+  <img src="../a2.JPG">
+  <br>
+  Imagen b
+</div>
+
+Los cuadros negros y balncos de la parte superior se funden en gris, lo que se espaera cuando no se pueden mostrar los detalles precisamente. La Imagen c muestra la imagen con una segunda estrategia de antialiasing basada en la transformada de Fourier.
+
+<div align="center">
+  <img src="../a3.JPG">
+  <br>
+  Imagen c
+</div>
+
+### **Métodos de antialiasing:**
+- **Sobremuestreo o posfiltración:** los objetos se muestrean con una resolución más alta y se despliegan con una resolución menor. Se considera una resolución de pantalla mayor que la que realmente tiene. Se calculan las intensidades en las posiciones de la cuadrícula de subpixel y se combinan los resultados para obtener las intensidades de los píxeles.
+
+- **Máscaras de peso de píxeles:** Consiste en dar más peso a los subpixeles cercanos al centro del área de un píxel, ya que estos subpíxeles son más importantes al determinar la intensidad de un píxel.
+
+- **Muestreo de área o prefiltración:** Determina la intensidad del píxel al calcular el translape de cada píxel con los objetos que se deben desplegar. Las áreas en que se sobreponen píxeles se obtienen al determinar dónde se intersecan las fronteras del objeto con las fronteras de píxeles individuales.
+
+- **Fases de píxel:** Cambiar la posición de despliegue de las áreas de píxeles. Se aplica mediante microcolocación del haz de electrones en relación con la geometría del objeto.
