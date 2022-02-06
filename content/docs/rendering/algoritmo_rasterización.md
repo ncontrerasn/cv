@@ -640,6 +640,24 @@ Para desccribir mejor el algoritmo se pueden describir ciertos pasos generales, 
       Repetir hasta que (X = X2) // NOTA: La condición de 'Repetir Hasta', se debe cambiar si se elige 'Repetir Mientras'
    Fin funcion
 
+  Para resumir:
+  1- Entran los puntos extremos de la linea
+
+  2- Se dibuja el punto inicial
+
+  3- Se calculan las constantes dx, dy, 2dy y 2dy-2dx
+
+  4- Se opera p0, que es el primer paramentro de decisión
+    p0 = 2dy-dx
+
+  5- En cada xk en la linea, se comprueba si pk es menor o mayor a 0:
+  
+    Si es menor, pk+1 es igual a pk+2dy
+    Si es mayor, pk+1 es igual a pk+2dy-2dx
+
+  Todo esto se repite dx-1 veces
+
+  
 ## **Antialiasing**
 Conocido también como suavizado, antiescalonamiento o suavizado de bordes o contorno. Son los procedimientos que permiten minimizar el solapamiento o aliasing que se produce al presentar una señal de alta resolución en un medio de menor resolución. En la mayoría de casos, consiste en eliminar la información de frecuencia demsasiado elevada. Cuando esa información no es filtrada, pueden producirse artefactos impredecibles (Imagen a).
 
