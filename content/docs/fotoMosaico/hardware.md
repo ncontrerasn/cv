@@ -13,16 +13,63 @@ let debug;
 let slider;
 let Grayimgs = new Array(10);
 
+function imgArraySortLuma(imagesArray){
+  let lumaMediaArray = [];
+  let index = 0;
+
+  imagesArray.forEach(function(image) {
+    lumaMediaArray[index] = calculateLuma(image);
+    index ++;
+  });
+
+  bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
+
+  return imagesArray;
+}
+
+function swap(lumaArray, imagesArray, xp, yp){
+    var temp = lumaArray[xp];
+    lumaArray[xp] = lumaArray[yp];
+    lumaArray[yp] = temp;
+
+    var temp2 = imagesArray[xp];
+    imagesArray[xp] = imagesArray[yp];
+    imagesArray[yp] = temp2;
+}
+
+// An optimized version of Bubble Sort
+function bubbleSort(lumaArray, imagesArray, n){
+var i, j;
+for (i = 0; i < n - 1; i++){
+    for (j = 0; j < n - i - 1; j++){
+        if (lumaArray[j] > lumaArray[j + 1])
+          swap(lumaArray, imagesArray, j, j + 1);
+    }
+  }
+}
+
+function calculateLuma(image){
+var sum = 0;
+image.loadPixels();
+
+for (var i = 0; i < image.width; i++) {
+  for (var j = 0; j < image.height; j++) 
+    sum += 0.333 * image.pixels[i] + 0.333 * image.pixels[i+1] + 0.333 * image.pixels[i+2];
+}
+return sum / (image.width * image.height);
+}
+
 function preload(){
   // load the shader
   theShader = loadShader('/cv/docs/fotoMosaico/texture.vert','/cv/docs/fotoMosaico/texture.frag');
   video = createVideo("/cv/docs/fotoMosaico/picnic.mp4");
   var k = 0;
   for (let i=0; i<15; i++){
-    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgHW/"+(i+1)+".jpg");
+    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
     k = k + 1;
   }
-  
+
+  Grayimgs = imgArraySortLuma(Grayimgs);
 }
 
 function setup() {
@@ -89,19 +136,67 @@ let debug;
 let slider;
 let Grayimgs = new Array(10);
 
+function imgArraySortLuma(imagesArray){
+  let lumaMediaArray = [];
+  let index = 0;
+
+  imagesArray.forEach(function(image) {
+    lumaMediaArray[index] = calculateLuma(image);
+    index ++;
+  });
+
+  bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
+
+  return imagesArray;
+}
+
+function swap(lumaArray, imagesArray, xp, yp){
+    var temp = lumaArray[xp];
+    lumaArray[xp] = lumaArray[yp];
+    lumaArray[yp] = temp;
+
+    var temp2 = imagesArray[xp];
+    imagesArray[xp] = imagesArray[yp];
+    imagesArray[yp] = temp2;
+}
+
+// An optimized version of Bubble Sort
+function bubbleSort(lumaArray, imagesArray, n){
+var i, j;
+for (i = 0; i < n - 1; i++){
+    for (j = 0; j < n - i - 1; j++){
+        if (lumaArray[j] > lumaArray[j + 1])
+          swap(lumaArray, imagesArray, j, j + 1);
+    }
+  }
+}
+
+function calculateLuma(image){
+var sum = 0;
+image.loadPixels();
+
+for (var i = 0; i < image.width; i++) {
+  for (var j = 0; j < image.height; j++) 
+    sum += 0.333 * image.pixels[i] + 0.333 * image.pixels[i+1] + 0.333 * image.pixels[i+2];
+}
+return sum / (image.width * image.height);
+}
+
 function preload(){
   // load the shader
   theShader = loadShader('/cv/docs/fotoMosaico/texture.vert','/cv/docs/fotoMosaico/texture.frag');
   img = loadImage("/cv/docs/fotoMosaico/imgHW/londres.jpg");
   var k = 0;
   for (let i=0; i<15; i++){
-    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgHW/"+(i+1)+".jpg");
+    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
     k = k + 1;
   }
+  //Grayimgs = imgArraySortLuma(Grayimgs);
 }
 
 function setup() {
   // shaders require WEBGL mode to work
+  Grayimgs = imgArraySortLuma(Grayimgs);
   createCanvas(1000, 1000, WEBGL);
   textureMode(NORMAL);
   shader(theShader);
