@@ -21,9 +21,7 @@ function imgArraySortLuma(imagesArray){
     lumaMediaArray[index] = calculateLuma(image);
     index ++;
   });
-
   bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
-
   return imagesArray;
 }
 
@@ -42,21 +40,20 @@ function bubbleSort(lumaArray, imagesArray, n){
 var i, j;
 for (i = 0; i < n - 1; i++){
     for (j = 0; j < n - i - 1; j++){
-        if (lumaArray[j] > lumaArray[j + 1])
+        if (lumaArray[j] < lumaArray[j + 1])
           swap(lumaArray, imagesArray, j, j + 1);
     }
   }
 }
 
 function calculateLuma(image){
-var sum = 0;
-image.loadPixels();
+  var sum = 0;
+  image.loadPixels();
 
-for (var i = 0; i < image.width; i++) {
-  for (var j = 0; j < image.height; j++) 
+  for (let i = 0; i < 4 * (image.width * image.height / 2); i += 4) 
     sum += 0.333 * image.pixels[i] + 0.333 * image.pixels[i+1] + 0.333 * image.pixels[i+2];
-}
-return sum / (image.width * image.height);
+  
+  return sum / (image.width * image.height);
 }
 
 function preload(){
@@ -77,7 +74,7 @@ function setup() {
   createCanvas(1000, 1000, WEBGL);
   textureMode(NORMAL);
   video.loop();
-  video.hide();
+  //video.hide();
   video.volume(0);
   noStroke();
   shader(theShader);
@@ -144,9 +141,7 @@ function imgArraySortLuma(imagesArray){
     lumaMediaArray[index] = calculateLuma(image);
     index ++;
   });
-
   bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
-
   return imagesArray;
 }
 
@@ -165,21 +160,24 @@ function bubbleSort(lumaArray, imagesArray, n){
 var i, j;
 for (i = 0; i < n - 1; i++){
     for (j = 0; j < n - i - 1; j++){
-        if (lumaArray[j] > lumaArray[j + 1])
+        if (lumaArray[j] < lumaArray[j + 1])
           swap(lumaArray, imagesArray, j, j + 1);
     }
   }
 }
 
 function calculateLuma(image){
-var sum = 0;
+var i = 0, total = 0;
 image.loadPixels();
 
-for (var i = 0; i < image.width; i++) {
-  for (var j = 0; j < image.height; j++) 
-    sum += 0.333 * image.pixels[i] + 0.333 * image.pixels[i+1] + 0.333 * image.pixels[i+2];
-}
-return sum / (image.width * image.height);
+for (let y = 0; y < image.height; y += 1) {
+    for (let x = 0; x < image.width; x += 1) {
+      pixel = image.pixels[(y * image.width + x)];
+      total = total + brightness(pixel);
+      i++;
+    }
+  }
+  return total / i;
 }
 
 function preload(){
