@@ -71,7 +71,7 @@ function calculateLuma(image){
 function preload(){
   // load the shader
   theShader = loadShader('/cv/docs/fotoMosaico/texture.vert','/cv/docs/fotoMosaico/texture.frag');
-  video = createVideo(['/cv/docs/fotoMosaico/picnic.mp4']);
+  video = createVideo(['/cv/sketches/fingers.mov']);
   video.hide();
   var k = 0;
   for (let i=0; i<15; i++){
