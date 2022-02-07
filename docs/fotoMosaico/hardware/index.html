@@ -2,19 +2,23 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Hardware Rendering #       let theShader; let video; let planeSide = 1000; let button; let debug; let slider; let Grayimgs = new Array(10); function imgArraySortLuma(imagesArray){ let lumaMediaArray = []; let index = 0; imagesArray.forEach(function(image) { lumaMediaArray[index] = calculateLuma(image); index ++; }); bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length); return imagesArray; } function swap(lumaArray, imagesArray, xp, yp){ var temp = lumaArray[xp]; lumaArray[xp] = lumaArray[yp]; lumaArray[yp] = temp; var temp2 = imagesArray[xp]; imagesArray[xp] = imagesArray[yp]; imagesArray[yp] = temp2; } // An optimized version of Bubble Sort function bubbleSort(lumaArray, imagesArray, n){ var i, j; for (i = 0; i < n - 1; i++){ for (j = 0; j < n - i - 1; j++){ if (lumaArray[j] < lumaArray[j + 1]) swap(lumaArray, imagesArray, j, j + 1); } } } function calculateLuma(image){ var sum = 0; image.">
+<meta name=description content="Hardware Rendering #  Este proceso consiste en renderizar utilziando el hardware de una GPU (Graphic Processing Unit) en vez de la CPU, lo cual permite una renderización más veloz a comparación de hacerlo con la CPU. Las tarjetas graficas se crearon precisamente para manejar procesos que son muy intensos graficamente hablando, lo que da una ventaja grande frente a las CPU.
+Como todo, esto tiene sus pros:
+ Se puede lograr una gran escalabilidad en una infraestructura con varias tarjetas graficas a disposición.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Hardware Rendering #       let theShader; let video; let planeSide = 1000; let button; let debug; let slider; let Grayimgs = new Array(10); function imgArraySortLuma(imagesArray){ let lumaMediaArray = []; let index = 0; imagesArray.forEach(function(image) { lumaMediaArray[index] = calculateLuma(image); index ++; }); bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length); return imagesArray; } function swap(lumaArray, imagesArray, xp, yp){ var temp = lumaArray[xp]; lumaArray[xp] = lumaArray[yp]; lumaArray[yp] = temp; var temp2 = imagesArray[xp]; imagesArray[xp] = imagesArray[yp]; imagesArray[yp] = temp2; } // An optimized version of Bubble Sort function bubbleSort(lumaArray, imagesArray, n){ var i, j; for (i = 0; i < n - 1; i++){ for (j = 0; j < n - i - 1; j++){ if (lumaArray[j] < lumaArray[j + 1]) swap(lumaArray, imagesArray, j, j + 1); } } } function calculateLuma(image){ var sum = 0; image.">
+<meta property="og:description" content="Hardware Rendering #  Este proceso consiste en renderizar utilziando el hardware de una GPU (Graphic Processing Unit) en vez de la CPU, lo cual permite una renderización más veloz a comparación de hacerlo con la CPU. Las tarjetas graficas se crearon precisamente para manejar procesos que son muy intensos graficamente hablando, lo que da una ventaja grande frente a las CPU.
+Como todo, esto tiene sus pros:
+ Se puede lograr una gran escalabilidad en una infraestructura con varias tarjetas graficas a disposición.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/fotoMosaico/hardware/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T22:50:36-05:00">
+<meta property="article:modified_time" content="2022-02-06T22:53:18-05:00">
 <title>Hardware | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.7aa258637f0da053be259ac6310f0d3682f3057fbdb6bb1dd8b51410091f2dd2.js integrity="sha256-eqJYY38NoFO+JZrGMQ8NNoLzBX+9trsd2LUUEAkfLdI=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.13be5ededd487bdb4450b2f3191e885398980b8bb94578540a8d8ea6fe9016fa.js integrity="sha256-E75e3t1Ie9tEULLzGR6IU5iYC4u5RXhUCo2Opv6QFvo=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -127,6 +131,17 @@ Blog
 <strong>Hardware Rendering</strong>
 <a class=anchor href=#hardware-rendering>#</a>
 </h2>
+<p>Este proceso consiste en renderizar utilziando el hardware de una GPU (Graphic Processing Unit) en vez de la CPU, lo cual permite una renderización más veloz a comparación de hacerlo con la CPU. Las tarjetas graficas se crearon precisamente para manejar procesos que son muy intensos graficamente hablando, lo que da una ventaja grande frente a las CPU.</p>
+<p>Como todo, esto tiene sus pros:</p>
+<ul>
+<li>Se puede lograr una gran escalabilidad en una infraestructura con varias tarjetas graficas a disposición.</li>
+<li>La paralelizaciíon que se puede lograr a travez de este hardware mejora no solo el rendimiento del render si no que permite que la CPU se encargue de otras tareas, mejorando la armonía del sistema.</li>
+</ul>
+<p>Y contras como:</p>
+<ul>
+<li>Las tarjetas graficas no tienen un acceso directo a la memoria del sistema principal, por lo que tiene que lograr esta comunicación por medio de la CPU.</li>
+<li>Es más complicado lograr la compatibilidad delas trajetas graficas con el render puesto que no solo depende de los fabricantes de estas si no de los controladores que el sistema tenga instalados para interactuar con estas.</li>
+</ul>
 <div align=center>
 <iframe id="Dynamic Kanizsa Illusion" style=width:800px;height:800px srcdoc='
         <!DOCTYPE html>
@@ -403,17 +418,19 @@ function keyPressed(){
         </html>
       '></iframe>
 </div>
+Podemos concluir que el uso de las GPU para render permite una mayor escala en los proyectos a realizar y un mejor rendimiento, sin embargo, su costoinherente y más ahora en el mercado actual demuestra que esta forma de rendering no es muy viable para un proyecto inicial o una apliación sencilla, por lo cual seria más provechos hacer rendering por medio de software.
 <h3 id=fuentes>
 <strong>Fuentes</strong>
 <a class=anchor href=#fuentes>#</a>
 </h3>
 <ul>
 <li><a href=https://develop3d.com/hardware/rendering-hardware/>https://develop3d.com/hardware/rendering-hardware/</a></li>
+<li><a href=https://www.omnisci.com/technical-glossary/gpu-rendering>https://www.omnisci.com/technical-glossary/gpu-rendering</a></li>
 </ul>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/bc4fc8a29c6fe69524131b6d60f3cd16d633abbf title="Last modified by Sergio | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/bceb45b47556119eca9a7f130033e031235109a6 title="Last modified by Sebastian Reina | February 7, 2022" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
