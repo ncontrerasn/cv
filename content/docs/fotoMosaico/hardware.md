@@ -78,6 +78,7 @@ function preload(){
     Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
     k = k + 1;
   }
+  
 
   Grayimgs = imgArraySortLuma(Grayimgs);
 }
