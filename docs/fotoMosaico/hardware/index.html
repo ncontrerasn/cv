@@ -8,13 +8,13 @@
 <meta property="og:description" content="Hardware Rendering #       let theShader; let video; let planeSide = 1000; let button; let debug; let slider; let Grayimgs = new Array(10); function imgArraySortLuma(imagesArray){ let lumaMediaArray = []; let index = 0; imagesArray.forEach(function(image) { lumaMediaArray[index] = calculateLuma(image); index ++; }); bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length); return imagesArray; } function swap(lumaArray, imagesArray, xp, yp){ var temp = lumaArray[xp]; lumaArray[xp] = lumaArray[yp]; lumaArray[yp] = temp; var temp2 = imagesArray[xp]; imagesArray[xp] = imagesArray[yp]; imagesArray[yp] = temp2; } // An optimized version of Bubble Sort function bubbleSort(lumaArray, imagesArray, n){ var i, j; for (i = 0; i < n - 1; i++){ for (j = 0; j < n - i - 1; j++){ if (lumaArray[j] < lumaArray[j + 1]) swap(lumaArray, imagesArray, j, j + 1); } } } function calculateLuma(image){ var sum = 0; image.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/fotoMosaico/hardware/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T22:11:01-05:00">
+<meta property="article:modified_time" content="2022-02-06T22:50:36-05:00">
 <title>Hardware | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.f48d0215fefd5cacda6d1c326f04e96784836aceec8719a9299cd4d3dba50df9.js integrity="sha256-9I0CFf79XKzabRwybwTpZ4SDas7shxmpKZzU09ulDfk=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.7aa258637f0da053be259ac6310f0d3682f3057fbdb6bb1dd8b51410091f2dd2.js integrity="sha256-eqJYY38NoFO+JZrGMQ8NNoLzBX+9trsd2LUUEAkfLdI=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -294,7 +294,9 @@ function imgArraySortLuma(imagesArray){
     lumaMediaArray[index] = calculateLuma(image);
     index ++;
   });
+  console.log(lumaMediaArray);
   bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
+  console.log(lumaMediaArray);
   return imagesArray;
 }
 
@@ -338,10 +340,14 @@ function preload(){
   theShader = loadShader(&#39;/cv/docs/fotoMosaico/texture.vert&#39;,&#39;/cv/docs/fotoMosaico/texture.frag&#39;);
   img = loadImage("/cv/docs/fotoMosaico/imgHW/londres.jpg");
   var k = 0;
-  for (let i=0; i<15; i++){
-    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
-    k = k + 1;
+  for(let i = 0; i<15; i++){
+    Grayimgs[i]=(loadImage(`https://picsum.photos/50?random=${i+1}`));
   }
+ // for (let i=0; i<15; i++){
+    
+   // Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
+   // k = k + 1;
+ // }
   //Grayimgs = imgArraySortLuma(Grayimgs);
 }
 
@@ -407,7 +413,7 @@ function keyPressed(){
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/50c9a530f1905cfec6c100e7b23796d29a16c7d0 title="Last modified by Sebastian Reina | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/bc4fc8a29c6fe69524131b6d60f3cd16d633abbf title="Last modified by Sergio | February 7, 2022" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
