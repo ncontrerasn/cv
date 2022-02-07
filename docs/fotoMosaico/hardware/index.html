@@ -12,13 +12,13 @@ Como todo, esto tiene sus pros:
  Se puede lograr una gran escalabilidad en una infraestructura con varias tarjetas gráficas a disposición.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/fotoMosaico/hardware/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T23:14:25-05:00">
+<meta property="article:modified_time" content="2022-02-06T23:45:09-05:00">
 <title>Hardware | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.f1c0eec4cd571625c447bbc0b0ab25de2caf6bc2d560a9c2c5f48ff062ba884e.js integrity="sha256-8cDuxM1XFiXER7vAsKsl3iyva8LVYKnCxfSP8GK6iE4=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.24d3def89767487e37fc1bc8a9fe7f1d604dbdeb532bb9a0d8dbfbda55cedf17.js integrity="sha256-JNPe+JdnSH43/BvIqf5/HWBNvetTK7mg2Nv72lXO3xc=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -157,7 +157,7 @@ Blog
           </body>
         </html>
       "></iframe>
-<iframe id="Dynamic Kanizsa Illusion" style=width:800px;height:800px srcdoc='
+<iframe id="Dynamic Kanizsa Illusion" style=width:800px;height:800px srcdoc="
         <!DOCTYPE html>
         <html>
           <head>
@@ -225,11 +225,12 @@ function calculateLuma(image){
 
 function preload(){
   // load the shader
-  theShader = loadShader(&#39;/cv/docs/fotoMosaico/texture.vert&#39;,&#39;/cv/docs/fotoMosaico/texture.frag&#39;);
-  video = createVideo("/cv/docs/fotoMosaico/picnic.mp4");
+  theShader = loadShader('/cv/docs/fotoMosaico/texture.vert','/cv/docs/fotoMosaico/texture.frag');
+  video = createVideo(['/cv/docs/fotoMosaico/picnic.mp4']);
+  video.hide();
   var k = 0;
   for (let i=0; i<15; i++){
-    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
+    Grayimgs[k] = loadImage(&#34;/cv/docs/fotoMosaico/imgDes/&#34;+(i+1)+&#34;.jpg&#34;);
     k = k + 1;
   }
 
@@ -245,28 +246,28 @@ function setup() {
   video.volume(0);
   noStroke();
   shader(theShader);
-  // here we&#39;re using setUniform() to send our uniform values to the shader
-  var str = ""
+  // here we're using setUniform() to send our uniform values to the shader
+  var str = &#34;&#34;
   for (var i=0 ; i<15 ; i++){
-    str = "Gr"+String(15-i);
+    str = &#34;Gr&#34;+String(15-i);
     theShader.setUniform(str, Grayimgs[i]);
   }
-  theShader.setUniform("resolution", 100);
+  theShader.setUniform(&#34;resolution&#34;, 100);
   debug = true;
-  theShader.setUniform("debug", debug);
+  theShader.setUniform(&#34;debug&#34;, debug);
 
   //Slider Config
   slider = createSlider(10,500,100,10);
   slider.position( 100, 30);
-  slider.style(&#39;width&#39;, &#39;200px&#39;);
-  showPixel = createElement(&#39;h2&#39;, &#39;px &#39;+100);
+  slider.style('width', '200px');
+  showPixel = createElement('h2', 'px '+100);
   showPixel.position( 30, 0);
 }
 
 function draw() {
-  theShader.setUniform("image", video);
-  theShader.setUniform("resolution", slider.value());
-  showPixel.html(&#39;px &#39;+slider.value());
+  theShader.setUniform(&#34;image&#34;, video);
+  theShader.setUniform(&#34;resolution&#34;, slider.value());
+  showPixel.html('px '+slider.value());
   background(0);
   beginShape();
   vertex(-planeSide/2, -planeSide/2, 0, 0); // esquina inferior izquierda
@@ -277,9 +278,9 @@ function draw() {
 }
 
 function keyPressed(){
-  if (key === &#39;d&#39;){
+  if (key === 'd'){
     debug = !debug;
-    theShader.setUniform("debug", debug);
+    theShader.setUniform(&#34;debug&#34;, debug);
   }
 }
 
@@ -289,7 +290,7 @@ function keyPressed(){
           <body>
           </body>
         </html>
-      '></iframe>
+      "></iframe>
 </div>
 <div align=center>
 <iframe id="Dynamic Kanizsa Illusion" style=width:800px;height:800px srcdoc='
@@ -444,7 +445,7 @@ Podemos concluir que el uso de las GPU para render permite una mayor escala en l
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/bba57cff816b599c1b476a0729d9fa5c1d835076 title="Last modified by Sergio | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/6e3e996fd0d10cee63eb6a6d72daca8f3578abd7 title="Last modified by Sergio | February 7, 2022" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
