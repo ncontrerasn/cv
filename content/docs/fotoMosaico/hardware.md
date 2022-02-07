@@ -1,7 +1,13 @@
 ## **Hardware Rendering**
+Este proceso consiste en renderizar utilziando el hardware de una GPU (Graphic Processing Unit) en vez de la CPU, lo cual permite una renderización más veloz a comparación de hacerlo con la CPU. Las tarjetas graficas se crearon precisamente para manejar procesos que son muy intensos graficamente hablando, lo que da una ventaja grande frente a las CPU.
 
+Como todo, esto tiene sus pros:
+- Se puede lograr una gran escalabilidad en una infraestructura con varias tarjetas graficas a disposición.
+- La paralelizaciíon que se puede lograr a travez de este hardware mejora no solo el rendimiento del render si no que permite que la CPU se encargue de otras tareas, mejorando la armonía del sistema.
 
-
+Y contras como:
+- Las tarjetas graficas no tienen un acceso directo a la memoria del sistema principal, por lo que tiene que lograr esta comunicación por medio de la CPU. 
+- Es más complicado lograr la compatibilidad delas trajetas graficas con el render puesto que no solo depende de los fabricantes de estas si no de los controladores que el sistema tenga instalados para interactuar con estas.
 
 <div align = "center">
 
@@ -242,7 +248,9 @@ function keyPressed(){
 {{< /p5-global-iframe >}}
 
 </div>
+Podemos concluir que el uso de las GPU para render permite una mayor escala en los proyectos a realizar y un mejor rendimiento, sin embargo, su costoinherente y más ahora en el mercado actual demuestra que esta forma de rendering no es muy viable para un proyecto inicial o una apliación sencilla, por lo cual seria más provechos hacer rendering por medio de software.
 
 ### **Fuentes**
 
 - https://develop3d.com/hardware/rendering-hardware/
+- https://www.omnisci.com/technical-glossary/gpu-rendering

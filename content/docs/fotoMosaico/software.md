@@ -216,3 +216,4 @@ Podemos concluir que el uso de renderizado por software es bastante amplio y muy
 ### **Fuentes**
 
 - https://en.wikipedia.org/wiki/Software_rendering
+- https://www.omnisci.com/technical-glossary/gpu-rendering
