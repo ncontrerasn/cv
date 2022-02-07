@@ -3,6 +3,11 @@ Es el proceso de generar una imagen a partir de un modelo por medio de software,
 
 Esta metodología es ampliamanete utilizada, ya sea en simuladores, videojuegos, peliculas y más cosas, lo que permite a las personas tener varias opciones para lograr mostrar el contenido deseado sin tener que invertir en hardware.
 
+Para este metodo, existen dos formas de render que son:
+
+- Pre-renderizado: Utilizado principalmente en las peliculas, pues se aprovecha que la limitación de hardware no es un obstaculo puesto que se muestra el resultado más no la producción.
+- Renderizado en tiempo real: Enfocado sobre todo en el rendimiento, trata de utilizar ilusiones para lograr su cometido sin utilizar tantos recursos.
+
 Uno de los beneficios del este tipo de renderización es la no dependencia del hardware en caso de que estos fallen por algina condición fisica o la amplia cantidad de paquetes que sirven para este fin, como SwiftShadder o WARP.
 
 Desafortunadamente, el rendering tiene limitaciones, como el hecho de que al usar la CPU no tiene todo ese hardware para ese proceso si no que tiene que compartir esos recursos, logrando que sea más lento la renderización. A su vez, esta la falta de tecnologías en CPU como RayTracing.
@@ -205,3 +210,9 @@ function draw(){
 {{< /p5-global-iframe >}}
 
 </div>
+
+Podemos concluir que el uso de renderizado por software es bastante amplio y muy util, que si bien tiene limitaciones, permite que sea más accesible para el publico el acercamiento a este tipo de render, pero hay que tener muy claro las limitaciones de rendimiento que tiene, por lo que su funcionalidad es inversamente proporcional al tamaño o exigencia del proyecto.
+
+### **Fuentes**
+
+- https://en.wikipedia.org/wiki/Software_rendering
