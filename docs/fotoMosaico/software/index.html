@@ -4,21 +4,21 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="Software Rendering #  Es el proceso de generar una imagen a partir de un modelo por medio de software, lo que significa que no necesita ningun tipo de hardware para lograr la imagen.
 Esta metodología es ampliamanete utilizada, ya sea en simuladores, videojuegos, peliculas y más cosas, lo que permite a las personas tener varias opciones para lograr mostrar el contenido deseado sin tener que invertir en hardware.
-Uno de los beneficios del este tipo de renderización es la no dependencia del hardware en caso de que estos fallen por algina condición fisica o la amplia cantidad de paquetes que sirven para este fin, como SwiftShadder o WARP.">
+Para este metodo, existen dos formas de render que son:">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
 <meta property="og:description" content="Software Rendering #  Es el proceso de generar una imagen a partir de un modelo por medio de software, lo que significa que no necesita ningun tipo de hardware para lograr la imagen.
 Esta metodología es ampliamanete utilizada, ya sea en simuladores, videojuegos, peliculas y más cosas, lo que permite a las personas tener varias opciones para lograr mostrar el contenido deseado sin tener que invertir en hardware.
-Uno de los beneficios del este tipo de renderización es la no dependencia del hardware en caso de que estos fallen por algina condición fisica o la amplia cantidad de paquetes que sirven para este fin, como SwiftShadder o WARP.">
+Para este metodo, existen dos formas de render que son:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ncontrerasn.github.io/cv/docs/fotoMosaico/software/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T21:28:26-05:00">
+<meta property="article:modified_time" content="2022-02-06T22:11:01-05:00">
 <title>Software | Visual Computing</title>
 <link rel=manifest href=/cv/manifest.json>
 <link rel=icon href=/cv/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/cv/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/cv/flexsearch.min.js></script>
-<script defer src=/cv/en.search.min.f1aca57da217fdf79d5296a1a0536ab6f16873d4a1fbc0a09bae529af3c0701f.js integrity="sha256-8aylfaIX/fedUpahoFNqtvFoc9Sh+8Cgm65SmvPAcB8=" crossorigin=anonymous></script>
+<script defer src=/cv/en.search.min.f48d0215fefd5cacda6d1c326f04e96784836aceec8719a9299cd4d3dba50df9.js integrity="sha256-9I0CFf79XKzabRwybwTpZ4SDas7shxmpKZzU09ulDfk=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -116,7 +116,11 @@ Blog
 <ul>
 <li>
 <ul>
-<li><a href=#software-rendering><strong>Software Rendering</strong></a></li>
+<li><a href=#software-rendering><strong>Software Rendering</strong></a>
+<ul>
+<li><a href=#fuentes><strong>Fuentes</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +133,11 @@ Blog
 </h2>
 <p>Es el proceso de generar una imagen a partir de un modelo por medio de software, lo que significa que no necesita ningun tipo de hardware para lograr la imagen.</p>
 <p>Esta metodología es ampliamanete utilizada, ya sea en simuladores, videojuegos, peliculas y más cosas, lo que permite a las personas tener varias opciones para lograr mostrar el contenido deseado sin tener que invertir en hardware.</p>
+<p>Para este metodo, existen dos formas de render que son:</p>
+<ul>
+<li>Pre-renderizado: Utilizado principalmente en las peliculas, pues se aprovecha que la limitación de hardware no es un obstaculo puesto que se muestra el resultado más no la producción.</li>
+<li>Renderizado en tiempo real: Enfocado sobre todo en el rendimiento, trata de utilizar ilusiones para lograr su cometido sin utilizar tantos recursos.</li>
+</ul>
 <p>Uno de los beneficios del este tipo de renderización es la no dependencia del hardware en caso de que estos fallen por algina condición fisica o la amplia cantidad de paquetes que sirven para este fin, como SwiftShadder o WARP.</p>
 <p>Desafortunadamente, el rendering tiene limitaciones, como el hecho de que al usar la CPU no tiene todo ese hardware para ese proceso si no que tiene que compartir esos recursos, logrando que sea más lento la renderización. A su vez, esta la falta de tecnologías en CPU como RayTracing.</p>
 <div align=center>
@@ -344,10 +353,19 @@ function draw(){
           </body>
         </html>
       '></iframe>
-</div></article>
+</div>
+<p>Podemos concluir que el uso de renderizado por software es bastante amplio y muy util, que si bien tiene limitaciones, permite que sea más accesible para el publico el acercamiento a este tipo de render, pero hay que tener muy claro las limitaciones de rendimiento que tiene, por lo que su funcionalidad es inversamente proporcional al tamaño o exigencia del proyecto.</p>
+<h3 id=fuentes>
+<strong>Fuentes</strong>
+<a class=anchor href=#fuentes>#</a>
+</h3>
+<ul>
+<li><a href=https://en.wikipedia.org/wiki/Software_rendering>https://en.wikipedia.org/wiki/Software_rendering</a></li>
+</ul>
+</article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/f7c107ccf678ed008099141e37c6db2f55d63fe2 title="Last modified by Sebastian Reina | February 7, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/ncontrerasn/cv/commit/50c9a530f1905cfec6c100e7b23796d29a16c7d0 title="Last modified by Sebastian Reina | February 7, 2022" target=_blank rel=noopener>
 <img src=/cv/svg/calendar.svg class=book-icon alt=Calendar>
 <span>February 7, 2022</span>
 </a>
@@ -365,7 +383,11 @@ function draw(){
 <ul>
 <li>
 <ul>
-<li><a href=#software-rendering><strong>Software Rendering</strong></a></li>
+<li><a href=#software-rendering><strong>Software Rendering</strong></a>
+<ul>
+<li><a href=#fuentes><strong>Fuentes</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
