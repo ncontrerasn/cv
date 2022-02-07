@@ -150,7 +150,9 @@ function imgArraySortLuma(imagesArray){
     lumaMediaArray[index] = calculateLuma(image);
     index ++;
   });
+  console.log(lumaMediaArray);
   bubbleSort(lumaMediaArray, imagesArray, lumaMediaArray.length);
+  console.log(lumaMediaArray);
   return imagesArray;
 }
 
@@ -194,10 +196,14 @@ function preload(){
   theShader = loadShader('/cv/docs/fotoMosaico/texture.vert','/cv/docs/fotoMosaico/texture.frag');
   img = loadImage("/cv/docs/fotoMosaico/imgHW/londres.jpg");
   var k = 0;
-  for (let i=0; i<15; i++){
-    Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
-    k = k + 1;
+  for(let i = 0; i<15; i++){
+    Grayimgs[i]=(loadImage(`https://picsum.photos/50?random=${i+1}`));
   }
+ // for (let i=0; i<15; i++){
+    
+   // Grayimgs[k] = loadImage("/cv/docs/fotoMosaico/imgDes/"+(i+1)+".jpg");
+   // k = k + 1;
+ // }
   //Grayimgs = imgArraySortLuma(Grayimgs);
 }
 
